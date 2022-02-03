@@ -27,9 +27,6 @@
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、アプリケーションをデプロイします。
 <img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
 
-
-
-
 ### TASK1.1:　AKS(Azure Kubernetes Service)のクラスターを作成
 [Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell**　より　　az コマンドで　Azure　上に、リソースグループと　AKS　クラスタを作成します。
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
@@ -86,10 +83,23 @@ ArgoCDのPodの状態が全て`Running`であることを確認します。
 kubectl -n argocd get po
 ```
 
-ArgoCDのGUIへアクセスするために、LBから接続できるように変更し、EXTERNAL-IPにPIPが割り振られたら`Ctrl+C`でwatchコマンドを抜けます
+<img width="552" alt="ScreenShot 2022-02-03 13 07 03" src="https://user-images.githubusercontent.com/17949085/152279621-e0f90ff5-4d99-4829-a4d1-aa25630cd781.png">
+
+次に、adminのパスワードを確認します。
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
+ArgoCDのGUIへアクセスするために、LBから接続できるように変更し、`EXTERNAL-IP`にPIPが割り振られたら　`Ctrl+C`　でwatchコマンドを抜けて、ブラウザより`EXTERNAL-IP`へアクセスします。
+userは`admin`で、さきほど確認したパスワードでログインします。
+
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 watch kubectl -n argocd get svc
-```
-ブラウザ
+``` 
+
+<img width="951" alt="ScreenShot 2022-02-03 13 10 09" src="https://user-images.githubusercontent.com/17949085/152279808-6d87c226-42a9-43ff-a2e8-5392eeb0779e.png">
+
+<img width="980" alt="ScreenShot 2022-02-03 13 13 43" src="https://user-images.githubusercontent.com/17949085/152280256-ef276317-2555-464f-898f-400ad953ef1f.png">
+
 ### TASK1.3:　ArgoCD applicationを設定
