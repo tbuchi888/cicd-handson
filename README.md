@@ -54,9 +54,12 @@ az aks create \
 さきほど作成したAKS へ　argocd　をインストールするために、AKSへの接続する準備をします。
 
 Azureポータル ＞ リソースグループ ＞ `myResourceGroup`
-リソースグループより、`myAKSCluster`を選択して、AKSのメニューへ行き、画面上部の　**接続**　をクリックして、AKSへの接続情報取得し、
-以下　az　コマンドにて　AKS　へ　アクセスできるようにします。
+リソースグループより、`myAKSCluster`を選択して、AKSのメニューへ行き、画面上部の　**接続**　をクリックして、AKSへの接続情報取得します。
 
+<img width="651" alt="ScreenShot 2022-02-03 12 13 14" src="https://user-images.githubusercontent.com/17949085/152275741-b91fa40a-a49b-4133-b5a0-bdd480c6a4cc.png">
+<img width="452<img width="573" alt="ScreenShot 2022-02-03 12 19 19" src="https://user-images.githubusercontent.com/17949085/152275911-720210d9-700a-4785-9c96-fb6e795f37e5.png">
+
+**Cloudshellのbashへ**　以下をコピー＆ペーストし、az　コマンドにて　AKS　へ　アクセスできるようにします。
 ```
 # AKS接続情報を取得
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -65,8 +68,6 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl get node -o wide 
 ```
 
-<img width="651" alt="ScreenShot 2022-02-03 12 13 14" src="https://user-images.githubusercontent.com/17949085/152275741-b91fa40a-a49b-4133-b5a0-bdd480c6a4cc.png">
-<img width="452<img width="573" alt="ScreenShot 2022-02-03 12 19 19" src="https://user-images.githubusercontent.com/17949085/152275911-720210d9-700a-4785-9c96-fb6e795f37e5.png">
 <img width="1227" alt="ScreenShot 2022-02-03 12 27 17" src="https://user-images.githubusercontent.com/17949085/152276596-b2c90888-f753-4a85-84a9-82eacc742d64.png">
 
 ### TASK1.2:　ArgoCD インストール
@@ -85,21 +86,59 @@ kubectl -n argocd get po
 
 <img width="552" alt="ScreenShot 2022-02-03 13 07 03" src="https://user-images.githubusercontent.com/17949085/152279621-e0f90ff5-4d99-4829-a4d1-aa25630cd781.png">
 
-次に、adminのパスワードを確認します。
+次に、`admin`のパスワードを確認します。
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 
-ArgoCDのGUIへアクセスするために、LBから接続できるように変更し、`EXTERNAL-IP`にPIPが割り振られたら　`Ctrl+C`　でwatchコマンドを抜けて、ブラウザより`EXTERNAL-IP`へアクセスします。
-userは`admin`で、さきほど確認したパスワードでログインします。
-
+ArgoCDのGUIへアクセスするために、LBから接続できるように変更し、
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
-watch kubectl -n argocd get svc
+```
+
+以下コマンドを`EXTERNAL-IP`にPIPが割り振られるまで何度入力し、ブラウザより`EXTERNAL-IP`へアクセスします。
+```
+kubectl -n argocd get svc
 ``` 
 
 <img width="951" alt="ScreenShot 2022-02-03 13 10 09" src="https://user-images.githubusercontent.com/17949085/152279808-6d87c226-42a9-43ff-a2e8-5392eeb0779e.png">
 
+ユーザー名は`admin`で、さきほど確認したパスワードでログインします。
+
 <img width="980" alt="ScreenShot 2022-02-03 13 13 43" src="https://user-images.githubusercontent.com/17949085/152280256-ef276317-2555-464f-898f-400ad953ef1f.png">
 
 ### TASK1.3:　ArgoCD applicationを設定
+既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、新規にアプリケーションを登録します。
+
+画面左上の`+ NEW APP`をクリックし以下を入力して、右上の`CREATE`をクリックします。
+**書いていないものはデフォルト値のまま**
+
+GENERAL
++ Application Name: argotest（任意）
++ Project: default（プルダウンより選択）
++ SYNC POLICY: Automatic（プルダウンより選択）
++ SYNC OPTIONS: AUTO-CREATE NAMESPACE(チェックを入れる)
+
+SOURCE
++ Repository URL: https://github.com/tbuchi888/argocd-sample-repo.git
++ Path: k8s
+DESTINATION
++ Cluster URL: https://kubernetes.default.svc（プルダウンより選択）
++ Namespace: argotest(任意)
+<img width="570" alt="ScreenShot 2022-02-03 13 43 09" src="https://user-images.githubusercontent.com/17949085/152282462-5fb13d5a-b613-4e6a-94da-d2f0ebdfbf36.png">
+
+作成したアプリケーションをクリックして、AKS上へアプリケーションがデプロイされていることを確認します。
+<img width="663" alt="ScreenShot 2022-02-03 13 44 46" src="https://user-images.githubusercontent.com/17949085/152282594-2c159ee9-4848-4b4d-9423-a2023962abb6.png">
+<img width="1228" alt="ScreenShot 2022-02-03 13 46 10" src="https://user-images.githubusercontent.com/17949085/152282832-96d9f497-360c-405a-bdeb-d78fa6d3748a.png">
+
+右上の`Network`のアイコンをクリックして表示を変えます
+<img width="1228" alt="ScreenShot 2022-02-03 13 46 10" src="https://user-images.githubusercontent.com/17949085/152282894-819403d1-1e3a-4315-b0ce-28df24ff21a4.png">
+
+インターネット（雲のアイコン）の右横に表示されているアプリケーションのPIPへブラウザよりアクセスし、デモアプリの画面が表示されることを確認します。
+
+このTASKの最後に、Azure　PortalのCloud Shell　より　　AKS　上にアプリケーションの　Kubernetes　オブジェクト(　Pod(コンテナ),　Deployment（コンテナ管理）, Service（L4LB）)がデプロイされていることを確認します。
+**Cloudshellのbashへ**　以下をコピー＆ペースト
+
+```
+kubectl -n argotest get all
+```
