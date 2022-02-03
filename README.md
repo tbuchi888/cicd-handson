@@ -4,7 +4,7 @@
 ## アジェンダ
 + [TASK0: 事前準備](https://github.com/tbuchi888/cicd-handson/edit/main/README.md#task0-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99)
 + [TASK1: Kubernetes および GitOps の初歩を体感](https://github.com/tbuchi888/cicd-handson/edit/main/README.md#task1-kubernetes-%E3%81%8A%E3%82%88%E3%81%B3--gitops-%E3%81%AE%E5%88%9D%E6%AD%A9%E3%82%92%E4%BD%93%E6%84%9F)
-+ TASK2: Git および、手動での GitOps を体感
++ [TASK2: Git および、手動での GitOps を体感](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md)
 
 ## TASK0: 事前準備
 本 Handson では、開始前に以下の準備ができていることを前提としています。
@@ -143,6 +143,8 @@ DESTINATION
 kubectl -n argotest get all
 ```
 <img width="639" alt="ScreenShot 2022-02-03 14 01 54" src="https://user-images.githubusercontent.com/17949085/152284177-42dd6671-4375-451c-9918-91a0d842c9b4.png">
+
 以上でこのタスクは終了となります。
+[TASK2へ](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md)
 
 ---
