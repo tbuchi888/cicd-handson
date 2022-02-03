@@ -124,7 +124,7 @@ SOURCE
 + Path: k8s
 DESTINATION
 + Cluster URL: https://kubernetes.default.svc（プルダウンより選択）
-+ Namespace: argotest(任意)
++ Namespace: argotest(kubectlコマンドで確認するため、こちらを設定するが、基本的には任意)
 <img width="570" alt="ScreenShot 2022-02-03 13 43 09" src="https://user-images.githubusercontent.com/17949085/152282462-5fb13d5a-b613-4e6a-94da-d2f0ebdfbf36.png">
 
 作成したアプリケーションをクリックして、AKS上へアプリケーションがデプロイされていることを確認します。
@@ -144,3 +144,4 @@ kubectl -n argotest get all
 ```
 <img width="639" alt="ScreenShot 2022-02-03 14 01 54" src="https://user-images.githubusercontent.com/17949085/152284177-42dd6671-4375-451c-9918-91a0d842c9b4.png">
 以上でこのタスクは終了となります。
+---
