@@ -27,7 +27,7 @@
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、アプリケーションをデプロイします。
 <img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
 
-### TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
+## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
 [Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** より  az コマンドで Azure 上に、リソースグループと AKS クラスタを作成します。
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
 
@@ -50,7 +50,7 @@ az aks create \
 ```
 <img width="909" alt="ScreenShot 2022-02-03 12 03 42" src="https://user-images.githubusercontent.com/17949085/152274651-f587da0d-6e44-4598-b796-febd306d8595.png">
 
-### TASK1.2: AKSへ接続
+## TASK1.2: AKSへ接続
 さきほど作成したAKS へ argocd をインストールするために、AKSへの接続する準備をします。
 
 Azureポータル ＞ リソースグループ ＞ `myResourceGroup`
@@ -107,7 +107,7 @@ kubectl -n argocd get svc
 
 <img width="980" alt="ScreenShot 2022-02-03 13 13 43" src="https://user-images.githubusercontent.com/17949085/152280256-ef276317-2555-464f-898f-400ad953ef1f.png">
 
-### TASK1.3: ArgoCD applicationを設定
+## TASK1.3: ArgoCD applicationを設定
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、新規にアプリケーションを登録します。
 
 画面左上の`+ NEW APP`をクリックし以下を入力して、右上の`CREATE`をクリックします。
@@ -144,4 +144,5 @@ kubectl -n argotest get all
 ```
 <img width="639" alt="ScreenShot 2022-02-03 14 01 54" src="https://user-images.githubusercontent.com/17949085/152284177-42dd6671-4375-451c-9918-91a0d842c9b4.png">
 以上でこのタスクは終了となります。
+
 ---
