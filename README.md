@@ -132,8 +132,8 @@ DESTINATION
 <img width="1228" alt="ScreenShot 2022-02-03 13 46 10" src="https://user-images.githubusercontent.com/17949085/152282832-96d9f497-360c-405a-bdeb-d78fa6d3748a.png">
 
 右上の`Network`のアイコンをクリックして表示を変えます
+<img width="1215" alt="ScreenShot 2022-02-03 14 05 24" src="https://user-images.githubusercontent.com/17949085/152284486-45e3e318-4be1-4f50-aba9-c2b35bd50ae8.png">
 <img width="1228" alt="ScreenShot 2022-02-03 13 46 10" src="https://user-images.githubusercontent.com/17949085/152282894-819403d1-1e3a-4315-b0ce-28df24ff21a4.png">
-
 インターネット（雲のアイコン）の右横に表示されているアプリケーションのPIPへブラウザよりアクセスし、デモアプリの画面が表示されることを確認します。
 
 このTASKの最後に、Azure　PortalのCloud Shell　より　　AKS　上にアプリケーションの　Kubernetes　オブジェクト(　Pod(コンテナ),　Deployment（コンテナ管理）, Service（L4LB）)がデプロイされていることを確認します。
@@ -142,3 +142,4 @@ DESTINATION
 ```
 kubectl -n argotest get all
 ```
+<img width="639" alt="ScreenShot 2022-02-03 14 01 54" src="https://user-images.githubusercontent.com/17949085/152284177-42dd6671-4375-451c-9918-91a0d842c9b4.png">
