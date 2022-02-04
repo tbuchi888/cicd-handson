@@ -70,7 +70,7 @@ kubectl get node -o wide
 
 <img width="1227" alt="ScreenShot 2022-02-03 12 27 17" src="https://user-images.githubusercontent.com/17949085/152276596-b2c90888-f753-4a85-84a9-82eacc742d64.png">
 
-### TASK1.2: ArgoCD インストール
+### TASK1.3: ArgoCD インストール
 [ArgoCD をインストールします。](https://argo-cd.readthedocs.io/en/stable/#quick-start)
 **Cloudshellのbashへ** 以下をコピー＆ペースト
 
