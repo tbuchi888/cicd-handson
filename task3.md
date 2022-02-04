@@ -1,5 +1,5 @@
 # Handson TASK3
-## TASK3: Git および、手動での GitOps を体感
+## TASK3: CI（Github Actions）および、CIと連動した CD（GitOps）を体感
 CI 用 Github project を自チームの Github アカウントへインポートし、 Github Actions の Secret 設定を行い CI の設定を完了させます。
 また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
@@ -46,4 +46,4 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
 左メニュー下の`< > Developer settings` > 左メニューの`Actions`> `General` をクリックして Actions permissions　を変更します。
 
-## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーする
+## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーし、GitOpsとの連携も体感
