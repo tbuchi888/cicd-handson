@@ -4,7 +4,7 @@ CI 用 Github project を自チームの Github アカウントへインポー�
 また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
-## TASK3.1: CI（Github Actions）からのコードの変更を許可するために API TOKEN を発行
+## TASK3.1: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
 
 <img width="261" alt="ScreenShot 2022-02-04 12 10 13" src="https://user-images.githubusercontent.com/17949085/152472816-ff0b4224-4334-4053-bb0f-ed5ea657cd9d.png">
@@ -30,7 +30,7 @@ Github 画面右上の`+`より`Import Repogitory`をクリックします。
 以下を入力して`Begin import`をクリックします。
 + Your old repository’s clone URL: https://github.com/tbuchi888/demo-js-nginx-docker-k8s.git
 + Repository Name: handson-ci-github-actions
-+ Privacy: Public
++ Privacy: Public（任意　Privateでも可）
 
 `Importing complete! Your new repository [YOUR-ACCOUNT-NAME]/handson-ci-github-actions is ready.`と表示されるまでまって
 表示されている作成されたリポジトリへのリンクをクリックします。
@@ -42,4 +42,8 @@ Github の秘匿情報を格納する Actions Secrets を設定することで�
 
 Secret を設定するめに、TASK3.2 でインポートした Github へ移動後、画面上右側の`Setting`をクリックします。
 
-## TASK3.4: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーする
+## TASK3.4: Github Actions　を有効にする
+続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
+左メニュー下の`< > Developer settings` > 左メニューの`Actions`> `General` をクリックして Actions permissions　を変更します。
+
+## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーする
