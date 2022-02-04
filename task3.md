@@ -1,10 +1,21 @@
 # Handson TASK3
 ## TASK3: Git および、手動での GitOps を体感
-CI 用 Github project を自チームの Github アカウントへインポートし、 Github Actions の Secret 設定を行い
-Github Codespaces での、Git commit / push トリガーに、CIによるコンテナビルド及び、GitOps プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
+CI 用 Github project を自チームの Github アカウントへインポートし、 Github Actions の Secret 設定を行い CI の設定を完了させます。
+また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
+CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
 ## TASK3.1: CI（Github Actions）からのコードの変更を許可するために API TOKEN を発行
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
+
+<img width="261" alt="ScreenShot 2022-02-04 12 10 13" src="https://user-images.githubusercontent.com/17949085/152472816-ff0b4224-4334-4053-bb0f-ed5ea657cd9d.png">
+
+<img width="332" alt="ScreenShot 2022-02-04 12 17 37" src="https://user-images.githubusercontent.com/17949085/152472827-2f8acc3a-d727-4ed0-a583-e8d4a2e19da1.png">
+
+<img width="431" alt="ScreenShot 2022-02-04 12 19 42" src="https://user-images.githubusercontent.com/17949085/152472863-72a166ec-8c3e-44eb-8cc2-376b82be932f.png">
+
+<img width="1097" alt="ScreenShot 2022-02-04 12 20 16" src="https://user-images.githubusercontent.com/17949085/152472894-ed4e5fc6-4fb4-4a39-892a-688469fcda17.png">
+
+<img width="1130" alt="ScreenShot 2022-02-04 12 22 35" src="https://user-images.githubusercontent.com/17949085/152473078-288a249b-f091-4f0e-9291-0c19514c23c5.png">
 
 以下を設定し、画面下部の 緑色の`Generate token`をクリックします。
 なお、作成したアクセストークンは、後ほど、Github Actions のSeceret 設定で使用するので控えておきます。
@@ -31,4 +42,4 @@ Github の秘匿情報を格納する Actions Secrets を設定することで�
 
 Secret を設定するめに、TASK3.2 でインポートした Github へ移動後、画面上右側の`Setting`をクリックします。
 
-## TASK3.4: コンテンツの内容を変更後、Git Commit/Push により、CIをトリガーする 
+## TASK3.4: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーする
