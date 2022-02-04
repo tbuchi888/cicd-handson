@@ -44,7 +44,7 @@ ArgoCD 画面右上の `APP DETAILS` > `EDIT` で編集モードに入り、`REP
 <img width="929" alt="ScreenShot 2022-02-03 17 03 12" src="https://user-images.githubusercontent.com/17949085/152303748-d92eeb25-790b-47ae-9b0d-6b3fd84a1a03.png">
 <img width="294" alt="ScreenShot 2022-02-03 17 04 55" src="https://user-images.githubusercontent.com/17949085/152303963-dae81937-c4f6-40ad-af64-0f443747c83f.png">
 
-## TASK2.2: Github Codespaces を利用して Git リポジトリを編集し、Git および手動での GitOps を体感 その1
+## TASK2.3: Github Codespaces を利用して Git リポジトリを編集し、Git および手動での GitOps を体感 その1
 再度、作成した Githubへ移動後、`< >Code`緑色のアイコンをクリックし、`CodeSpaces`タブ > `New Codespace`をクリックします。
 https://github.com/[YOUR-ACCOUNT-NAME]/handson-gitops.git
 
@@ -84,7 +84,7 @@ ArgoCD 側で 参照している Git 上の変更を検知して、自動的に 
 
 <img width="1187" alt="ScreenShot 2022-02-03 17 39 28" src="https://user-images.githubusercontent.com/17949085/152309348-26ea5010-e52c-47f4-ad76-3b3834e2b695.png">
 
-## TASK2.3: 手動での GitOps を体感 その2
+## TASK2.4: 手動での GitOps を体感 その2
 再度、Codospacesへ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
 
 + TASK2.2を参考にチャンレジしてください 
