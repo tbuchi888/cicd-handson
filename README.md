@@ -107,7 +107,7 @@ kubectl -n argocd get svc
 
 <img width="980" alt="ScreenShot 2022-02-03 13 13 43" src="https://user-images.githubusercontent.com/17949085/152280256-ef276317-2555-464f-898f-400ad953ef1f.png">
 
-## TASK1.3: ArgoCD applicationを設定
+## TASK1.4: ArgoCD applicationを設定
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、新規にアプリケーションを登録します。
 
 画面左上の`+ NEW APP`をクリックし以下を入力して、右上の`CREATE`をクリックします。
