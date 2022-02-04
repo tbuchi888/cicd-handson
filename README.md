@@ -35,11 +35,11 @@
 
 ```
 # First create a resource group
-az group create --name myResourceGroup --location japaneast
+az group create --name myResourceGroupXXX --location japaneast
 
 # Now create the AKS cluster and enable the cluster autoscaler
 az aks create \
-  --resource-group myResourceGroup \
+  --resource-group myResourceGroupXXX \
   --name myAKSCluster \
   --node-count 1 \
   --vm-set-type VirtualMachineScaleSets \
@@ -53,7 +53,7 @@ az aks create \
 ## TASK1.2: AKSへ接続
 さきほど作成したAKS へ argocd をインストールするために、AKSへの接続する準備をします。
 
-Azureポータル ＞ リソースグループ ＞ `myResourceGroup`
+Azureポータル ＞ リソースグループ ＞ `myResourceGroupXXX`
 リソースグループより、`myAKSCluster`を選択して、AKSのメニューへ行き、画面上部の **接続** をクリックして、AKSへの接続情報取得します。
 
 <img width="651" alt="ScreenShot 2022-02-03 12 13 14" src="https://user-images.githubusercontent.com/17949085/152275741-b91fa40a-a49b-4133-b5a0-bdd480c6a4cc.png">
@@ -62,7 +62,7 @@ Azureポータル ＞ リソースグループ ＞ `myResourceGroup`
 **Cloudshellのbashへ** 以下をコピー＆ペーストし、az コマンドにて AKS へ アクセスできるようにします。
 ```
 # AKS接続情報を取得
-az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+az aks get-credentials --resource-group myResourceGroupXXX --name myAKSCluster
 
 # kubectl コマンドで AKS クラスタ の worker node を表示
 kubectl get node -o wide 
