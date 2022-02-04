@@ -4,14 +4,13 @@ CI　用 Github project を自チームの Github アカウントへインポー
 Github Codespaces での、Git commit / push トリガーに、CIによるコンテナビルド及び、GitOps プロジェクトの　Kubernetes　マニフェストを自動更新による、GitOps　を体感します。
 
 ## TASK3.1: CI（Github Actions）　からのコードの変更を許可するために　API TOKEN　を発行
-Github　へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`<　>　Developer settings`
- > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
+Github　へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`<　>　Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
 
 以下を設定し、画面下部の　緑色の`Generate token`をクリックします。
 なお、作成したアクセストークンは、後ほど、Github Actions のSeceret 設定で使用するので控えておきます。
 
 + Note： for-github-actions-handson（任意）
-＋　Expiration： 30days(有効期限のデフォルト値ですが、Handson後も利用する場合、適宜変更してください）
++ Expiration： 30days(有効期限のデフォルト値ですが、Handson後も利用する場合、適宜変更してください）
 + Select scopes: `repo` 　へチェックを入れる（必須）
 
 ## TASK3.2: CI用 Github project を自分のGithubアカウントへインポート
