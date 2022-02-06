@@ -27,6 +27,8 @@
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、アプリケーションをデプロイします。
 <img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
 
+
+
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
 [Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** より  az コマンドで Azure 上に、リソースグループと AKS クラスタを作成します。
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
@@ -34,10 +36,10 @@
 **Cloudshellのbashへ** 以下をコピー＆ペーストしてEnterを押下、AKSのクラスタ作成完了（JSON形式の結果が返ってくる）まで数分待ちます
 
 ```
-# First create a resource group
+# 最初にリソースグループを作成します。
 az group create --name myResourceGroupXXX --location japaneast
 
-# Now create the AKS cluster and enable the cluster autoscaler
+# AKSクラスタを作成し、クラスタオートスケーラを有効にします。
 az aks create \
   --resource-group myResourceGroupXXX \
   --name myAKSCluster \
@@ -46,7 +48,8 @@ az aks create \
   --load-balancer-sku standard \
   --enable-cluster-autoscaler \
   --min-count 1 \
-  --max-count 3
+  --max-count 3 \
+  --generate-ssh-keys
 ```
 <img width="909" alt="ScreenShot 2022-02-03 12 03 42" src="https://user-images.githubusercontent.com/17949085/152274651-f587da0d-6e44-4598-b796-febd306d8595.png">
 
