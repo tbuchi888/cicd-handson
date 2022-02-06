@@ -34,6 +34,7 @@
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
 
 **Cloudshellのbashへ** 以下をコピー＆ペーストしてEnterを押下、AKSのクラスタ作成完了（JSON形式の結果が返ってくる）まで数分待ちます
+(Cloudshell を初めて使う場合には、ストレージの設定が必要です。)
 
 ```
 # 最初にリソースグループを作成します。
