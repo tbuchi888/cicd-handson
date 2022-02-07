@@ -47,7 +47,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 左メニュー下の`< > Developer settings` > 左メニューの`Actions`> `General` をクリックして Actions permissions　を変更します。
 
 ## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーし、GitOpsとの連携も体感
+手順を追加する
 
-
-## Task4: 残タスク
-- サービスプリンシパルの削除
+以上でこのタスクは終了となります。 [TASK4](https://github.com/tbuchi888/cicd-handson/blob/main/task4.md)へ
+---
