@@ -30,15 +30,14 @@ Dockerhub へログイン後、画面上の`Create Repository` をクリック�
 ![ScreenShot 2022-02-07 17 55 27](https://user-images.githubusercontent.com/17949085/152756468-bf939436-e03a-4b1b-99fb-d86755f61aba.png)
 
 
-以下で`Generate`をクリックし、発行された`Access Token`は後ほど、使うので控えておきます。（控えられなかった場合は、削除して再作成）
+以下で`Generate`をクリックし、発行された`Access Token`は後ほど、使うので控えておきます。
+（控えられなかった場合は、削除して再作成となるので注意）
 + Access Token Description * : For github actions（任意の説明）
 + Access permissions:Read, Write, Delete（初期値のまま）
 
 ![ScreenShot 2022-02-07 17 57 36](https://user-images.githubusercontent.com/17949085/152756503-b2836f8e-071e-463d-9d1c-b79e38ecf122.png)
 
 <img width="734" alt="ScreenShot 2022-02-07 18 14 37" src="https://user-images.githubusercontent.com/17949085/152759222-b66d226e-a09c-41a1-a2ff-976ec837313a.png">
-
-![ScreenShot 2022-02-07 18 09 46](https://user-images.githubusercontent.com/17949085/152758342-6ef15959-a09e-4a1c-9ae5-7eb1958167ac.png)
 
 ## TASK3.2: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
