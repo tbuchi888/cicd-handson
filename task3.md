@@ -1,10 +1,25 @@
 # Handson TASK3
 ## TASK3: CI（Github Actions）および、CIと連動した CD（GitOps）を体感
+CI 用 空のコンテナイメージを Dockerhub へPublicとして新規作成します。 
 CI 用 Github project を自チームの Github アカウントへインポートし、 Github Actions の Secret 設定を行い CI の設定を完了させます。
 また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
-## TASK3.1: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
+## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成
+Dockerhub へログイン後、画面上の`Create Repository` をクリックして作成画面へ移動します。
+<img width="1142" alt="ScreenShot 2022-02-07 13 00 26" src="https://user-images.githubusercontent.com/17949085/152723036-ba1d37db-6d0e-451b-a15e-5cb1f5f45358.png">
+
+<img width="1155" alt="ScreenShot 2022-02-07 13 00 42" src="https://user-images.githubusercontent.com/17949085/152723100-9338fb84-a56f-46cf-a1c9-e74d248eba1d.png">
+
+以下を入力し`Cretate`をクリックし、空のコンテナイメージを新規に作成します。
++ Repository名: handson-ci-image（コンテナイメージ名）
++ Visibility: Public
+
+<img width="1160" alt="ScreenShot 2022-02-07 13 01 08" src="https://user-images.githubusercontent.com/17949085/152723138-cfdd7093-1faa-4ea6-8f80-af14735366ce.png">
+
+<img width="1165" alt="ScreenShot 2022-02-07 13 01 22" src="https://user-images.githubusercontent.com/17949085/152723398-a8f240fa-610a-4f91-a6c2-d04a8d10bad3.png">
+
+## TASK3.2: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
 
 <img width="261" alt="ScreenShot 2022-02-04 12 10 13" src="https://user-images.githubusercontent.com/17949085/152472816-ff0b4224-4334-4053-bb0f-ed5ea657cd9d.png">
@@ -27,7 +42,7 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 <img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
 
 
-## TASK3.2: CI用 Github project を自分のGithubアカウントへインポート
+## TASK3.3: CI用 Github project を自分のGithubアカウントへインポート
 Github 画面右上の`+`より`Import Repogitory`をクリックします。
 
 以下を入力して`Begin import`をクリックします。
@@ -38,7 +53,7 @@ Github 画面右上の`+`より`Import Repogitory`をクリックします。
 `Importing complete! Your new repository [YOUR-ACCOUNT-NAME]/handson-ci-github-actions is ready.`と表示されるまでまって
 表示されている作成されたリポジトリへのリンクをクリックします。
 
-## TASK3.3: CI用 Github project のGithub Actions Secretの設定
+## TASK3.4: CI用 Github project のGithub Actions Secretの設定
 CI 用のGithub Actions のワークフローは既に作成済みです。
 あとは、ビルドするコンテナイメージの情報や、更新する GitOps の Git レポジトリの情報などを
 Github の秘匿情報を格納する Actions Secrets を設定することで、CI の設定が完了します。
@@ -49,20 +64,20 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 <img width="893" alt="ScreenShot 2022-02-07 11 25 45" src="https://user-images.githubusercontent.com/17949085/152715362-cfa16061-ef99-44e6-924d-503f217bff82.png">
 <img width="1136" alt="ScreenShot 2022-02-07 11 28 32" src="https://user-images.githubusercontent.com/17949085/152715382-88fc0701-c59c-428e-8658-28ce9238be1a.png">
 
+
 `New repository secret`をクリックし以下6つの Secrets を追加します。
 + DOCKER_USERNAME: 各チームで事前に用意した Dockerhub アカウント
 + DOCKER_PASSWORD: 各チームで事前に用意した Dockerhub アカウントのパスワード
-+ DOCKER_REPONAME:　 handson-ci-image（コンテナイメージ名）
++ DOCKER_REPONAME: handson-ci-image（コンテナイメージ名）
 + GIT_USERNAME_DEPLOY: 各チームで事前に用意した Github アカウント（前タスクで作成した GitOps 用の Github アカウント）
 + GIT_PASSWORD_DEPLOY: 前のタスクで生成した`Personal access token`の値（パスワードではないので注意）
-+ GIT_REPONAME_DEPLOY:　 handson-gitops（前タスクで作成した GitOps 用の Github プロジェクト名）
++ GIT_REPONAME_DEPLOY: handson-gitops（前タスクで作成した GitOps 用の Github プロジェクト名）
 
 <img width="1132" alt="ScreenShot 2022-02-07 11 49 54" src="https://user-images.githubusercontent.com/17949085/152717952-1f10f618-0c68-44f2-9066-ab9071f2a545.png">
 
 <img width="1154" alt="ScreenShot 2022-02-07 12 03 48" src="https://user-images.githubusercontent.com/17949085/152718071-f21dd659-ed69-499f-a94a-9ee990bf7fc6.png">
 
-
-## TASK3.4: Github Actions を有効にする
+## TASK3.5: Github Actions を有効にする
 続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
 左メニュー下`Security`の`Secrets`> `Actions` をクリックして Actions permissions　を変更します。
 `Allow all actions`を選択して`Save`をクリックします。
@@ -71,7 +86,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 
 以上で　CI　( Github Actions　)の準備が整いました。
 
-## TASK3.5: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
+## TASK3.6: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
 手順を追加する
 
 
