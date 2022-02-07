@@ -41,13 +41,27 @@ CI 用のGithub Actions のワークフローは既に作成済みです。
 Github の秘匿情報を格納する Actions Secrets を設定することで、CI の設定が完了します。
 
 Secret を設定するめに、TASK3.2 でインポートした Github へ移動後、画面上右側の`Setting`をクリックします。
+左メニュー下の`Security` `Secrets`> `Actions` をクリックして `Actions secrets`画面を表示します。
+
+<img width="893" alt="ScreenShot 2022-02-07 11 25 45" src="https://user-images.githubusercontent.com/17949085/152715362-cfa16061-ef99-44e6-924d-503f217bff82.png">
+<img width="1136" alt="ScreenShot 2022-02-07 11 28 32" src="https://user-images.githubusercontent.com/17949085/152715382-88fc0701-c59c-428e-8658-28ce9238be1a.png">
+
+`New repository secret`をクリックし以下6つを追加します。
++ DOCKER_USERNAME: 各チームで事前に用意した Dockerhub アカウント
++ DOCKER_PASSWORD: 各チームで事前に用意した Dockerhub アカウントのパスワード
++ DOCKER_REPONAME:　 handson-ci-image（コンテナイメージ名）
++ GIT_USERNAME_DEPLOY: 各チームで事前に用意した Github アカウント（前タスクで作成した GitOps 用の Github アカウント）
++ GIT_PASSWORD_DEPLOY: 前のタスクで生成した`Personal access token`の値（パスワードではないので注意）
++ GIT_REPONAME_DEPLOY:　 handson-gitops（前タスクで作成した GitOps 用の Github プロジェクト名）
 
 ## TASK3.4: Github Actions　を有効にする
 続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
-左メニュー下の`< > Developer settings` > 左メニューの`Actions`> `General` をクリックして Actions permissions　を変更します。
+左メニュー下`Security`の`Secrets`> `Actions` をクリックして Actions permissions　を変更します。
 
 ## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーし、GitOpsとの連携も体感
 手順を追加する
 
+
 以上でこのタスクは終了となります。 [TASK4](https://github.com/tbuchi888/cicd-handson/blob/main/task4.md)へ
+
 ---
