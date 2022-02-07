@@ -32,10 +32,16 @@
 
 
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
-[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** より  az コマンドで Azure 上に、リソースグループと AKS クラスタを作成します。
+[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** より  az コマンドで Azure 上に、リソースグループと [AKS クラスタを作成](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-service-principal?tabs=azure-cli)します。
+
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
 
-**Cloudshellのbashへ** 以下をコピー＆ペーストしてEnterを押下、AKSのクラスタ作成完了（JSON形式の結果が返ってくる）まで数分待ちます
+**以下各チーム毎に準備されたものへ置き換えて実行をしてください**
++ myResourceGroupXXX: Subscription内でユニークなものを設定
++ [SP_APPID]: 事前に作成されたサービス プリンシパルの`appId`
++ [SP_PWD]: 事前に作成されたサービス プリンシパルの`password`
+
+**Cloudshellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKSのクラスタ作成完了（JSON形式の結果が返ってくる）まで数分待ちます
 (Cloudshell を初めて使う場合には、ストレージの設定が必要です。)
 
 ```
@@ -52,7 +58,8 @@ az aks create \
   --enable-cluster-autoscaler \
   --min-count 1 \
   --max-count 3 \
-  --generate-ssh-keys
+  --generate-ssh-keys \
+  --service-principal [SP_APPID] --client-secret [SP_PWD]
 ```
 <img width="909" alt="ScreenShot 2022-02-03 12 03 42" src="https://user-images.githubusercontent.com/17949085/152274651-f587da0d-6e44-4598-b796-febd306d8595.png">
 
