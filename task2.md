@@ -68,7 +68,7 @@ CodeSpaces が起動したら、好きなテーマを選択して、画面左よ
 
 ```
 # Localで変更内容をCommit
-git commit -a -m "1St Change"
+git commit -a -m "1st Change"
 # 変更したCommit をリモートリポジトリへ push
 git push origin master
 ```
@@ -96,10 +96,23 @@ ArgoCD 側で 参照している Git 上の変更を検知して、自動的に 
       - image: docker.io/takuyak/nginx-sample-gr:v1
 ```
 
+Git でリポジトリの内容をアップデートします。
+
+```
+# Localで変更内容をCommit
+git commit -a -m "2nd Change"
+# 変更したCommit をリモートリポジトリへ push
+git push origin master
+```
+
 ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウザ より アプリケーション（コンテナイメージ）が変更されたことを確認してください。
 ブラウザのキャッシュが残っていて、変更が反映されない場合は、シークレットウィンドウで再度開いてください。
+![image](https://user-images.githubusercontent.com/15963767/152686512-223ed47f-86ed-433d-8a82-5614f4e2d1f8.png)
 
-つづいて、再度、Codospacesへ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
+確認ができたら先に進みます。
+
+
+つづいて、再度、Codospacesへ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映します。
 
 + TASK2.2を参考にチャンレジしてください 
 + YAML形式なので、インデントに注意して作業してください
@@ -109,8 +122,20 @@ ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウ
       - image: docker.io/takuyak/nginx-sample-gr:v2
 ```
 
+Git でリポジトリの内容をアップデートします。
+
+```
+# Localで変更内容をCommit
+git commit -a -m "3rd Change"
+# 変更したCommit をリモートリポジトリへ push
+git push origin master
+```
+
 再度、ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウザ より アプリケーション（コンテナイメージ）が変更されたことを確認してください。
 ブラウザのキャッシュが残っていて、変更が反映されない場合は、シークレットウィンドウで再度開いてください。
+
+![image](https://user-images.githubusercontent.com/15963767/152686678-925933aa-a404-4467-a0c5-6c07e4d09d4f.png)
+
 
 以上でこのタスクは終了となります。
 [TASK3へ](https://github.com/tbuchi888/cicd-handson/blob/main/task3.md)
