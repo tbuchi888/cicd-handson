@@ -8,7 +8,7 @@ CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジ�
 <img width="952" alt="ScreenShot 2022-02-07 15 48 45" src="https://user-images.githubusercontent.com/17949085/152738695-6e954e41-ae8e-406b-94f7-34321a0679db.png">
 
 
-## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成
+## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成 および Access Token を発行
 Dockerhub へログイン後、画面上の`Create Repository` をクリックして作成画面へ移動します。
 <img width="1142" alt="ScreenShot 2022-02-07 13 00 26" src="https://user-images.githubusercontent.com/17949085/152723036-ba1d37db-6d0e-451b-a15e-5cb1f5f45358.png">
 
@@ -21,6 +21,24 @@ Dockerhub へログイン後、画面上の`Create Repository` をクリック�
 <img width="1160" alt="ScreenShot 2022-02-07 13 01 08" src="https://user-images.githubusercontent.com/17949085/152723138-cfdd7093-1faa-4ea6-8f80-af14735366ce.png">
 
 <img width="1165" alt="ScreenShot 2022-02-07 13 01 22" src="https://user-images.githubusercontent.com/17949085/152723398-a8f240fa-610a-4f91-a6c2-d04a8d10bad3.png">
+
+
+次に画面右上のアカウント名をクリックし、`Account Settings` > `Security` > `Access Tokens`で`New Access Token`をクリックしてｔｏｋｅｎ発行します。
+
+![ScreenShot 2022-02-07 17 53 10](https://user-images.githubusercontent.com/17949085/152755873-be5a212f-990b-4754-b953-5bdb1a89f11f.png)
+
+![ScreenShot 2022-02-07 17 55 27](https://user-images.githubusercontent.com/17949085/152756468-bf939436-e03a-4b1b-99fb-d86755f61aba.png)
+
+
+以下で`Generate`をクリックし、発行された`Access Token`は後ほど、使うので控えておきます。（控えられなかった場合は、削除して再作成）
++ Access Token Description * : For github actions（任意の説明）
++ Access permissions:Read, Write, Delete（初期値のまま）
+
+![ScreenShot 2022-02-07 17 57 36](https://user-images.githubusercontent.com/17949085/152756503-b2836f8e-071e-463d-9d1c-b79e38ecf122.png)
+
+<img width="734" alt="ScreenShot 2022-02-07 18 14 37" src="https://user-images.githubusercontent.com/17949085/152759222-b66d226e-a09c-41a1-a2ff-976ec837313a.png">
+
+![ScreenShot 2022-02-07 18 09 46](https://user-images.githubusercontent.com/17949085/152758342-6ef15959-a09e-4a1c-9ae5-7eb1958167ac.png)
 
 ## TASK3.2: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
@@ -43,7 +61,6 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 <img width="1130" alt="ScreenShot 2022-02-04 12 22 35" src="https://user-images.githubusercontent.com/17949085/152473078-288a249b-f091-4f0e-9291-0c19514c23c5.png">
 
 <img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
-
 
 ## TASK3.3: CI用 Github project を自分のGithubアカウントへインポート
 Github 画面右上の`+`より`Import Repogitory`をクリックします。
@@ -70,7 +87,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 
 `New repository secret`をクリックし以下6つの Secrets を追加します。
 + DOCKER_USERNAME: 各チームで事前に用意した Dockerhub アカウント
-+ DOCKER_PASSWORD: 各チームで事前に用意した Dockerhub アカウントのパスワード
++ DOCKER_PASSWORD: 前のタスクで生成した`Access token`の値（パスワードではないので注意）
 + DOCKER_REPONAME: handson-ci-image（コンテナイメージ名）
 + GIT_USERNAME_DEPLOY: 各チームで事前に用意した Github アカウント（前タスクで作成した GitOps 用の Github アカウント）
 + GIT_PASSWORD_DEPLOY: 前のタスクで生成した`Personal access token`の値（パスワードではないので注意）
