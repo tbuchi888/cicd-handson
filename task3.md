@@ -87,8 +87,49 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 以上で　CI　( Github Actions　)の準備が整いました。
 
 ## TASK3.6: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
-手順を追加する
+いよいよ、Web コンテンツの内容を変更し、Git コマンドで変更を反映させることで、　CI　( Github Actions　)を起動します。
+CIの主な内容は以下の2つです。
++ Web コンテンツを含む、コンテナイメージをビルドして、Dockerhub へ push
++ GitOps（ ArgoCD ）用の Github プロジェクト（ Githubアカウント名/handson-gitops ）にある、Kubernetes マニフェストファイル（ k8s/bl.yml ）を新規にビルドしたコンテナイメージのタグ名に書き換える
+　　
+実際の CI ( Github Actions　)の内容については、handson-ci-github-actions　Github プロジェクトの`.github/workflows/main.yml`に記載されています。
+こちらの中で、先ほど設定した秘匿情報である　Secrets　の値を` ${{ secrets.DOCKER_USERNAME }}`のように記述して呼び出しを行い
+秘匿情報をコードに直接記述することなく、ログについてもマスクする等、セキュアに処理を行なうことが可能です。
 
+
+それでは、はじめる前に、あらかじめ以下をブラウザで開いておきます。
++ Githubアカウント名/handson-ci-github-actions　Github プロジェクト
++ Githubアカウント名/handson-gitops プロジェクト
++ Dockerhub( Login 済み　handson-ci-image を表示)
++ ArgoCD( Login 済み Application のNW表示)
+
+`Github Codespaces` または、Azure Portalの`Cloudshell`より、`handson-ci-github-actions`Github プロジェクトの内容について
+以下の部分を変更して、Gitコマンドで変更をリモートリポジトリ（`handson-ci-github-actions` Github プロジェクト）へ反映させます。
+
++ 変更点1: `html/index.html` 14〜20行目の HTML　の　 Body 部分を変更します。（例： v1 から v2 ） 
+
+```
+        <p>The HOSTNAME is $HOSTNAME </p>
+        <p>The version is demo </p>
+        <p>The version is v1 </p>
+        <p>The version is v1 </p>
+        <p>The version is v1 </p>
+        <p>The version is v1 </p>
+        <p>The version is v1 </p>
+```
+
++ 変更点2: `html/css/style.css` 88行目の CSS の背景色を変更します。（例： `#ffe3f1` ）
+
+```
+  background-color: #c9f2ff;
+```
+
+以下 Git コマンドで変更をリモートリポジトリへ反映させます。
+
+```
+Git commit -a -m "Changed the contents of index.html and css.js."
+Git push origin master
+```
 
 以上でこのタスクは終了となります。 [TASK4](https://github.com/tbuchi888/cicd-handson/blob/main/task4.md)へ
 
