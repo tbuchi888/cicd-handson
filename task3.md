@@ -62,7 +62,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 <img width="1154" alt="ScreenShot 2022-02-07 12 03 48" src="https://user-images.githubusercontent.com/17949085/152718071-f21dd659-ed69-499f-a94a-9ee990bf7fc6.png">
 
 
-## TASK3.4: Github Actions　を有効にする
+## TASK3.4: Github Actions を有効にする
 続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
 左メニュー下`Security`の`Secrets`> `Actions` をクリックして Actions permissions　を変更します。
 `Allow all actions`を選択して`Save`をクリックします。
@@ -71,7 +71,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 
 以上で　CI　( Github Actions　)の準備が整いました。
 
-## TASK3.5: Github Codespaces　上でコンテンツの内容を変更後、Git Commit/Push により、CIをトリガーし、GitOpsとの連携も体感
+## TASK3.5: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
 手順を追加する
 
 
