@@ -5,6 +5,9 @@ CI 用 Github project を自チームの Github アカウントへインポー�
 また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
+<img width="952" alt="ScreenShot 2022-02-07 15 48 45" src="https://user-images.githubusercontent.com/17949085/152738695-6e954e41-ae8e-406b-94f7-34321a0679db.png">
+
+
 ## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成
 Dockerhub へログイン後、画面上の`Create Repository` をクリックして作成画面へ移動します。
 <img width="1142" alt="ScreenShot 2022-02-07 13 00 26" src="https://user-images.githubusercontent.com/17949085/152723036-ba1d37db-6d0e-451b-a15e-5cb1f5f45358.png">
@@ -100,13 +103,13 @@ CIの主な内容は以下の2つです。
 それでは、はじめる前に、あらかじめ以下をブラウザで開いておきます。
 + Githubアカウント名/handson-ci-github-actions　Github プロジェクト
 + Githubアカウント名/handson-gitops プロジェクト
-+ Dockerhub( Login 済み　handson-ci-image を表示)
++ Dockerhub( Login 済み handson-ci-image を表示)
 + ArgoCD( Login 済み Application のNW表示)
 
 `Github Codespaces` または、Azure Portalの`Cloudshell`より、`handson-ci-github-actions`Github プロジェクトの内容について
 以下の部分を変更して、Gitコマンドで変更をリモートリポジトリ（`handson-ci-github-actions` Github プロジェクト）へ反映させます。
 
-+ 変更点1: `html/index.html` 14〜20行目の HTML　の　 Body 部分を変更します。（例： v1 から v2 ） 
++ 変更点1: `html/index.html` 14〜20行目の HTML　の Body 部分を変更します。（例： v1 から v2 ） 
 
 ```
         <p>The HOSTNAME is $HOSTNAME </p>
@@ -130,6 +133,21 @@ CIの主な内容は以下の2つです。
 Git commit -a -m "Changed the contents of index.html and css.js."
 Git push origin master
 ```
+
+　CI　( Github Actions　)が起動されますので、以下の状況を確認します。
++ Githubアカウント名/handson-ci-github-actions　Github プロジェクト
+  + `Actions`タブより、 CI　( Github Actions　)の進捗状況を確認
+    +  正常に完了（グリーン）することを確認
++ Githubアカウント名/handson-gitops プロジェクト
+  + `k8s/bl.yml`のコンテナイメージのタグが、自動的に更新されていることを確認
++ Dockerhub( Login 済み handson-ci-image を表示)
+  + 自動的にイメージがpushされ、タグが更新されていることを確認
++ ArgoCD( Login 済み Application のNW表示)
+  + Githubアカウント名/handson-gitops プロジェクトの更新を検知して、AKS上のPod（コンテナ）が、ローリングアップデートされることを確認
+    + ポーリング間隔（デフォルト3分）により、反映タイミングが多少前後します。
+
+最後に、ブラウザより再度アプリケーションを開き、変更（ body 部及び背景色）が反映されたことを確認してください。
+なお、ブラウザのキャッシュが残っていて、変更が反映されない場合は、シークレットウィンドウで再度開いてください。
 
 以上でこのタスクは終了となります。 [TASK4](https://github.com/tbuchi888/cicd-handson/blob/main/task4.md)へ
 
