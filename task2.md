@@ -44,7 +44,14 @@ ArgoCD 画面右上の `APP DETAILS` > `EDIT` で編集モードに入り、`REP
 <img width="929" alt="ScreenShot 2022-02-03 17 03 12" src="https://user-images.githubusercontent.com/17949085/152303748-d92eeb25-790b-47ae-9b0d-6b3fd84a1a03.png">
 <img width="294" alt="ScreenShot 2022-02-03 17 04 55" src="https://user-images.githubusercontent.com/17949085/152303963-dae81937-c4f6-40ad-af64-0f443747c83f.png">
 
-## TASK2.3: Github Codespaces を利用して Git リポジトリを編集し、Git および手動での GitOps を体感 その1
+## TASK2.4: Git リポジトリを編集し、Git および手動での GitOps を体感 その1
+GitOps 用 の Git　プロジェクトについて、変更を行います。
++ `Github Codespaces`を利用可能な場合は、[TASK2.4.1](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task241-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)を実施してください。
++ `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
+
+## TASK2.4.1: Github Codespaces を利用する場合
+**`Github Codespaces`を利用出来ない場合は、こちらはスキップして、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)へ進んでください。**
+
 再度、作成した Githubへ移動後、`< >Code`緑色のアイコンをクリックし、`CodeSpaces`タブ > `New Codespace`をクリックします。
 https://github.com/[YOUR-ACCOUNT-NAME]/handson-gitops.git
 
@@ -74,6 +81,87 @@ git push origin master
 ```
 <img width="1026" alt="ScreenShot 2022-02-03 17 46 08" src="https://user-images.githubusercontent.com/17949085/152309716-9f6668f8-c566-4b22-aaac-290cdf5fbdb7.png">
 
+## TASK2.4.2: Cloud shell を利用する場合( Github Codespaces を利用できない場合)
+**`Github Codespaces`を利用出来ない場合は、こちらの手順で実施してください。TASK2.4.1を実施済みの場合は、こちらはスキップして、[TASK2.5](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task25-%E6%89%8B%E5%8B%95%E3%81%A7%E3%81%AE-gitops-%E3%82%92%E4%BD%93%E6%84%9F-%E3%81%9D%E3%81%AE1%E5%85%B1%E9%80%9A)へ進んでください。**
+
+はじめに、`Cloud shell`より、`git push`コマンドを実行するために、Githubの`Personal access token`を発行します。
+Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
+
+<img width="261" alt="ScreenShot 2022-02-04 12 10 13" src="https://user-images.githubusercontent.com/17949085/152472816-ff0b4224-4334-4053-bb0f-ed5ea657cd9d.png">
+
+<img width="332" alt="ScreenShot 2022-02-04 12 17 37" src="https://user-images.githubusercontent.com/17949085/152472827-2f8acc3a-d727-4ed0-a583-e8d4a2e19da1.png">
+
+<img width="431" alt="ScreenShot 2022-02-04 12 19 42" src="https://user-images.githubusercontent.com/17949085/152472863-72a166ec-8c3e-44eb-8cc2-376b82be932f.png">
+
+<img width="1097" alt="ScreenShot 2022-02-04 12 20 16" src="https://user-images.githubusercontent.com/17949085/152472894-ed4e5fc6-4fb4-4a39-892a-688469fcda17.png">
+
+以下を設定し、画面下部の 緑色の`Generate token`をクリックします。
+なお、作成したアクセストークンは、後ほど、Github Actions のSeceret 設定でも使用するのでコピーして、控えておきます。（作成時しか確認出来ませんので、控え忘れた場合は、再作成となります。）
+
++ Note： for-github-actions-handson（任意）
++ Expiration： 30days(有効期限のデフォルト値ですが、Handson後も利用する場合、適宜変更してください）
++ Select scopes: `repo`  へチェックを入れる（必須）
+
+<img width="1130" alt="ScreenShot 2022-02-04 12 22 35" src="https://user-images.githubusercontent.com/17949085/152473078-288a249b-f091-4f0e-9291-0c19514c23c5.png">
+
+<img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
+
+
+次に、[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** を起動し、`git clone`コマンドで ソースコードをローカルにクローンします。
+
+以下[YOUR-ACCOUNT-NAME]は各自で置き換えてくささい
+
+```
+# git global 設定 （設定していない場合）
+git config --global user.name "[YOUR-ACCOUNT-NAME]"
+git config --global user.email "[YOUR-ACCOUNT-NAME]@users.noreply.github.com"
+# ソースコードをクローン
+git clone https://github.com/[YOUR-ACCOUNT-NAME]/handson-gitops.git
+# ソースコードのディレクトリへ移動
+cd handson-gitops
+# ファイルやディレクトリを表示
+ls -al
+```
+
+`code` または`vi`等のテキストエディターを利用して編集対象の kubernetes のマニフェストファイル`k8s/bl.yml`を開きます。
+
+例）
+```
+# code 
+code k8s/bl.yml
+```
+
+12行目の 
+```
+  replicas: 4
+```
+を
+```
+  replicas: 10
+```
+へ変更してファイルを保存します。
+
+以下`code`エディターでの編集の例
+
+<img width="645" alt="ScreenShot 2022-02-08 17 09 16" src="https://user-images.githubusercontent.com/17949085/152947041-14369966-40e9-41f8-a4b8-81c6ae0d5e75.png">
+
+<img width="1175" alt="ScreenShot 2022-02-08 17 13 08" src="https://user-images.githubusercontent.com/17949085/152947139-9f461328-5573-44f1-a32a-71bf65b89238.png">
+
+次にTERMINALへ以下をコピー＆ペーストして、変更をリモートのGitへ反映させます。
+なお、`git push`コマンド実行時に対話型で Github の`Username`（アカウント名）と`Password`（先ほど発行した`Personal access token`）を聞かれますのでそれぞれ入力します。
+
+```
+# Localで変更内容をCommit
+git commit -a -m "1st Change"
+# 変更したCommit をリモートリポジトリへ push
+git push origin master
+```
+
+<img width="755" alt="ScreenShot 2022-02-08 17 20 36" src="https://user-images.githubusercontent.com/17949085/152947596-523b1e69-d9fb-4905-bde7-7fe066506ac4.png">
+
+
+
+## TASK2.5: 手動での GitOps を体感 その1（共通）
 Github へ戻って、変更が反映されていることを確認
 <img width="800" alt="ScreenShot 2022-02-03 17 38 39" src="https://user-images.githubusercontent.com/17949085/152309292-35f294ac-278f-45e0-b112-8bdc266366b0.png">
 
@@ -84,8 +172,10 @@ ArgoCD 側で 参照している Git 上の変更を検知して、自動的に 
 
 <img width="1187" alt="ScreenShot 2022-02-03 17 39 28" src="https://user-images.githubusercontent.com/17949085/152309348-26ea5010-e52c-47f4-ad76-3b3834e2b695.png">
 
-## TASK2.4: 手動での GitOps を体感 その2
-再度、Codospacesへ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
+
+
+## TASK2.6: 手動での GitOps を体感 その2（共通）
+再度、`Codospaces` または、`Cloudshell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
 
 + TASK2.2を参考にチャンレジしてください 
 + YAML形式なので、インデントに注意して作業してください
@@ -112,9 +202,9 @@ ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウ
 確認ができたら先に進みます。
 
 
-つづいて、再度、Codospacesへ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映します。
+つづいて、再度、`Codospaces` または、`Cloudshell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映します。
 
-+ TASK2.2を参考にチャンレジしてください 
++ TASK2.4を参考にチャンレジしてください 
 + YAML形式なので、インデントに注意して作業してください
 + 27行目のコンテナイメージ`image`のタグ部分を`v1`から`v2`へ変更
 
