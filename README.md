@@ -1,4 +1,8 @@
 # cicd-handson
+こちらは、GitOps と、Github Actions のサンプルを利用した CI/CD Handson の手順を説明したものとなります。
++ 記載の内容については、2022年2月4日時点の環境（ OSS や、その他 Azure 等プラットフォームのバージョン）をベースとしています。
++ **なお、こちらに記載の内容はあくまでサンプルとなりますので、ご注意ください。**
+
 ![ScreenShot 2022-02-03 12 38 43](https://user-images.githubusercontent.com/17949085/152277472-e69f6882-c0a2-4b7f-9407-563a4e8b7b45.png)
 
 ## アジェンダ
@@ -25,10 +29,13 @@
 ---
 
 ## TASK1: Kubernetes および  GitOps の初歩を体感
-アプリケーションのデプロイ先となる AKS Kubernetes クラスタの作成 と GitOps ツールである ArgoCD を作成したAKSへインストールし、
+アプリケーションのデプロイ先となる AKS Kubernetes クラスタの作成 と GitOps ツールの1つ（*1）である ArgoCD を作成した AKS へインストールし、
 既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、アプリケーションをデプロイします。
-<img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
 
+*1: GitOps ツールについては、他に [Flux](https://fluxcd.io/) 等もありますが、今回は ArgoCD を利用します。
+
+
+<img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
 
 
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
@@ -41,7 +48,7 @@
 + [SP_APPID]: 事前に作成されたサービス プリンシパルの`appId`
 + [SP_PWD]: 事前に作成されたサービス プリンシパルの`password`
 
-**Cloudshellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKSのクラスタ作成完了（JSON形式の結果が返ってくる）まで数分待ちます
+**Cloudshellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKS のクラスタ作成完了（ JSON 形式の結果が返ってくる）まで数分待ちます
 (Cloudshell を初めて使う場合には、ストレージの設定が必要です。)
 
 ```
@@ -64,10 +71,10 @@ az aks create \
 <img width="909" alt="ScreenShot 2022-02-03 12 03 42" src="https://user-images.githubusercontent.com/17949085/152274651-f587da0d-6e44-4598-b796-febd306d8595.png">
 
 ## TASK1.2: AKSへ接続
-さきほど作成したAKS へ argocd をインストールするために、AKSへの接続する準備をします。
+さきほど作成した AKS へ argocd をインストールするために、AKSへの接続する準備をします。
 
 Azureポータル ＞ リソースグループ ＞ `myResourceGroupXXX`
-リソースグループより、`myAKSCluster`を選択して、AKSのメニューへ行き、画面上部の **接続** をクリックして、AKSへの接続情報取得します。
+リソースグループより、`myAKSCluster`を選択して、AKS のメニューへ行き、画面上部の **接続** をクリックして、AKS への接続情報取得します。
 
 <img width="651" alt="ScreenShot 2022-02-03 12 13 14" src="https://user-images.githubusercontent.com/17949085/152275741-b91fa40a-a49b-4133-b5a0-bdd480c6a4cc.png">
 <img width="452<img width="573" alt="ScreenShot 2022-02-03 12 19 19" src="https://user-images.githubusercontent.com/17949085/152275911-720210d9-700a-4785-9c96-fb6e795f37e5.png">
@@ -104,7 +111,7 @@ kubectl -n argocd get po
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 
-ArgoCDのGUIへアクセスするために、LBから接続できるように変更し、
+ArgoCD の GUI へアクセスするために、LBから接続できるように変更し、
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
@@ -121,7 +128,7 @@ kubectl -n argocd get svc
 <img width="980" alt="ScreenShot 2022-02-03 13 13 43" src="https://user-images.githubusercontent.com/17949085/152280256-ef276317-2555-464f-898f-400ad953ef1f.png">
 
 ## TASK1.4: ArgoCD applicationを設定
-既存のGithubプロジェクトのKubernetes用マニフェストファイルを利用して、新規にアプリケーションを登録します。
+既存の Github プロジェクトの Kubernetes 用マニフェストファイルを利用して、新規にアプリケーションを登録します。
 
 画面左上の`+ NEW APP`をクリックし以下を入力して、右上の`CREATE`をクリックします。
 **書いていないものはデフォルト値のまま**
