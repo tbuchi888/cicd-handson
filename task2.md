@@ -99,7 +99,7 @@ cat ~/.ssh/id_rsa.pub
 出力できたら、```ssh-rsa AAAA..........mUXfB0bb``` のキーをコピーします。
 
 
-Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > SSH and GPG keys` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
+Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の `SSH and GPG keys` >  右上の`New SSH Key`をクリックしてSSH key の登録画面へ移動します。
 
 ![image](https://user-images.githubusercontent.com/15963767/153027981-ee31e88b-2d5b-45ae-88e9-fb2d65f6e418.png)
 
