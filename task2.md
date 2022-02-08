@@ -84,28 +84,33 @@ git push origin master
 ## TASK2.4.2: Cloud shell を利用する場合( Github Codespaces を利用できない場合)
 **`Github Codespaces`を利用出来ない場合は、こちらの手順で実施してください。TASK2.4.1を実施済みの場合は、こちらはスキップして、[TASK2.5](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task25-%E6%89%8B%E5%8B%95%E3%81%A7%E3%81%AE-gitops-%E3%82%92%E4%BD%93%E6%84%9F-%E3%81%9D%E3%81%AE1%E5%85%B1%E9%80%9A)へ進んでください。**
 
-はじめに、`Cloud shell`より、`git push`コマンドを実行するために、Githubの`Personal access token`を発行します。
-Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
+はじめに、`Cloud shell`より、`git push`コマンドを実行するために、Github に `SSH key` を登録します。
 
-<img width="261" alt="ScreenShot 2022-02-04 12 10 13" src="https://user-images.githubusercontent.com/17949085/152472816-ff0b4224-4334-4053-bb0f-ed5ea657cd9d.png">
+SSH Key は Azure 上で Kubernetes インスタンスを作成時に自動的に作成されています。Cloud Shell で以下のコマンドを入力して取得してください。
 
-<img width="332" alt="ScreenShot 2022-02-04 12 17 37" src="https://user-images.githubusercontent.com/17949085/152472827-2f8acc3a-d727-4ed0-a583-e8d4a2e19da1.png">
+```
+cat ~/.ssh/id_rsa.pub
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKejzXMif7IsMtv2FzFJJ0dx7Bw...........mUXfB0bb
 
-<img width="431" alt="ScreenShot 2022-02-04 12 19 42" src="https://user-images.githubusercontent.com/17949085/152472863-72a166ec-8c3e-44eb-8cc2-376b82be932f.png">
+# もし存在しない場合は
+# ssh-keygen のコマンドで id_rsa.pub ファイルを作成可能です。存在しない場合のみこちらのコマンドは実行してください。実行時は手順に従って Enter を入力してください。
+```
 
-<img width="1097" alt="ScreenShot 2022-02-04 12 20 16" src="https://user-images.githubusercontent.com/17949085/152472894-ed4e5fc6-4fb4-4a39-892a-688469fcda17.png">
+出力できたら、```ssh-rsa AAAA..........mUXfB0bb``` のキーをコピーします。
 
-以下を設定し、画面下部の 緑色の`Generate token`をクリックします。
-なお、作成したアクセストークンは、後ほど、Github Actions のSeceret 設定でも使用するのでコピーして、控えておきます。（作成時しか確認出来ませんので、控え忘れた場合は、再作成となります。）
 
-+ Note： for-github-actions-handson（任意）
-+ Expiration： 30days(有効期限のデフォルト値ですが、Handson後も利用する場合、適宜変更してください）
-+ Select scopes: `repo`  へチェックを入れる（必須）
+Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > SSH and GPG keys` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
 
-<img width="1130" alt="ScreenShot 2022-02-04 12 22 35" src="https://user-images.githubusercontent.com/17949085/152473078-288a249b-f091-4f0e-9291-0c19514c23c5.png">
+![image](https://user-images.githubusercontent.com/15963767/153027981-ee31e88b-2d5b-45ae-88e9-fb2d65f6e418.png)
 
-<img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
+![image](https://user-images.githubusercontent.com/15963767/153028017-31cec4f0-4518-4934-8d51-87858e573fd1.png)
 
+![image](https://user-images.githubusercontent.com/15963767/153028094-a3b502bd-03b2-4808-96ad-040c9097e439.png)
+
+![image](https://user-images.githubusercontent.com/15963767/153029208-53aaba3a-57f2-491c-8296-ac2f9481c030.png)
+
+
+設定後、画面下部の 緑色の`Add SSH key`をクリックします。
 
 次に、[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** を起動し、`git clone`コマンドで ソースコードをローカルにクローンします。
 
@@ -116,7 +121,7 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 git config --global user.name "[YOUR-ACCOUNT-NAME]"
 git config --global user.email "[YOUR-ACCOUNT-NAME]@users.noreply.github.com"
 # ソースコードをクローン
-git clone https://github.com/[YOUR-ACCOUNT-NAME]/handson-gitops.git
+git clone git@github.com:[YOUR-ACCOUNT-NAME]/handson-gitops.git
 # ソースコードのディレクトリへ移動
 cd handson-gitops
 # ファイルやディレクトリを表示
