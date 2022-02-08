@@ -50,7 +50,7 @@ GitOps 用 の Git　プロジェクトについて、変更を行います。
 + `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
 
 ## TASK2.4.1: Github Codespaces を利用する場合
-**`Github Codespaces`を利用出来ない場合は、こちらはスキップして、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)へ進んでください。**
+**`Github Codespaces`を利用出来ない場合は、こちらはスキップして、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)へ進んでください。**
 
 再度、作成した Githubへ移動後、`< >Code`緑色のアイコンをクリックし、`CodeSpaces`タブ > `New Codespace`をクリックします。
 https://github.com/[YOUR-ACCOUNT-NAME]/handson-gitops.git
@@ -82,7 +82,7 @@ git push origin master
 <img width="1026" alt="ScreenShot 2022-02-03 17 46 08" src="https://user-images.githubusercontent.com/17949085/152309716-9f6668f8-c566-4b22-aaac-290cdf5fbdb7.png">
 
 ## TASK2.4.2: Cloud shell を利用する場合( Github Codespaces を利用できない場合)
-**`Github Codespaces`を利用出来ない場合は、こちらの手順で実施してください。TASK2.4.1を実施済みの場合は、こちらはスキップして、[TASK2.5](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task25-%E6%89%8B%E5%8B%95%E3%81%A7%E3%81%AE-gitops-%E3%82%92%E4%BD%93%E6%84%9F-%E3%81%9D%E3%81%AE1%E5%85%B1%E9%80%9A)へ進んでください。**
+**`Github Codespaces`を利用出来ない場合は、こちらの手順で実施してください。TASK2.4.1を実施済みの場合は、こちらはスキップして、[TASK2.5](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task25-%E6%89%8B%E5%8B%95%E3%81%A7%E3%81%AE-gitops-%E3%82%92%E4%BD%93%E6%84%9F-%E3%81%9D%E3%81%AE1%E5%85%B1%E9%80%9A)へ進んでください。**
 
 はじめに、`Cloud shell`より、`git push`コマンドを実行するために、Githubの`Personal access token`を発行します。
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
