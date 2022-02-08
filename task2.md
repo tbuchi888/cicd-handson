@@ -46,8 +46,8 @@ ArgoCD 画面右上の `APP DETAILS` > `EDIT` で編集モードに入り、`REP
 
 ## TASK2.4: Git リポジトリを編集し、Git および手動での GitOps を体感 その1
 GitOps 用 の Git　プロジェクトについて、変更を行います。
-+ `Github Codespaces`を利用可能な場合は、[TASK2.4.1](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task241-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)を実施してください。
-+ `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
++ `Github Codespaces`を利用可能な場合は、[TASK2.4.1](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task241-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)を実施してください。
++ `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
 
 ## TASK2.4.1: Github Codespaces を利用する場合
 **`Github Codespaces`を利用出来ない場合は、こちらはスキップして、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/edit/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)へ進んでください。**
