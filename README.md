@@ -142,6 +142,7 @@ GENERAL
 SOURCE
 + Repository URL: https://github.com/tbuchi888/argocd-sample-repo.git
 + Path: k8s
+
 DESTINATION
 + Cluster URL: https://kubernetes.default.svc（プルダウンより選択）
 + Namespace: argotest(kubectlコマンドで確認するため、こちらを設定するが、基本的には任意)
