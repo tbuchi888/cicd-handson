@@ -122,7 +122,7 @@ CIの主な内容は以下の2つです。
 + Dockerhub( Login 済み handson-ci-image を表示)
 + ArgoCD( Login 済み Application のNW表示)
 
-`Github Codespaces` または、Azure Portalの`Cloudshell`より、`handson-ci-github-actions`Github プロジェクトの内容について
+`handson-ci-github-actions`Github プロジェクトを`Github Codespaces` で開く、または、Azure Portalの`Cloudshell`で`git clone`し、
 以下の部分を変更して、Gitコマンドで変更をリモートリポジトリ（`handson-ci-github-actions` Github プロジェクト）へ反映させます。
 
 + 変更点1: `html/index.html` 14〜20行目の HTML　の Body 部分を変更します。（例： v1 から v2 ） 
@@ -143,17 +143,23 @@ CIの主な内容は以下の2つです。
   background-color: #c9f2ff;
 ```
 
++ 参考：Googleでカラーコードを検索できます。
+
+<img width="300" alt="ScreenShot 2022-02-07 14 26 10" src="https://user-images.githubusercontent.com/17949085/152935561-4742576a-60fe-4241-b24a-ebe95bd084bc.png">
+
+
+
 以下 Git コマンドで変更をリモートリポジトリへ反映させます。
 
 ```
-Git commit -a -m "Changed the contents of index.html and css.js."
-Git push origin master
+git commit -a -m "Changed the contents of index.html and css.js."
+git push origin master
 ```
 
 　CI　( Github Actions　)が起動されますので、以下の状況を確認します。
 + Githubアカウント名/handson-ci-github-actions　Github プロジェクト
   + `Actions`タブより、 CI　( Github Actions　)の進捗状況を確認
-    +  正常に完了（グリーン）することを確認
+    + 正常に完了（グリーン）することを確認
 + Githubアカウント名/handson-gitops プロジェクト
   + `k8s/bl.yml`のコンテナイメージのタグが、自動的に更新されていることを確認
 + Dockerhub( Login 済み handson-ci-image を表示)
