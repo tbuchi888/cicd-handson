@@ -148,7 +148,7 @@ code k8s/bl.yml
 <img width="1175" alt="ScreenShot 2022-02-08 17 13 08" src="https://user-images.githubusercontent.com/17949085/152947139-9f461328-5573-44f1-a32a-71bf65b89238.png">
 
 次にTERMINALへ以下をコピー＆ペーストして、変更をリモートのGitへ反映させます。
-なお、`git push`コマンド実行時に対話型で Github の`Username`（アカウント名）と`Password`（先ほど発行した`Personal access token`）を聞かれますのでそれぞれ入力します。
+なお、`git push`コマンド実行時に対話型で Github の`Username`（アカウント名）と`Password`（先ほど発行した`Personal access token`**Githubのパスワードではないので注意**）を聞かれますのでそれぞれ入力します。
 
 ```
 # Localで変更内容をCommit
