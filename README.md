@@ -26,6 +26,14 @@
   + アカウントが存在しない場合： [Dockerhub Top ページの Get Started Today for Free](https://hub.docker.com/) より新規作成
   + 用途：CIで作成するコンテナイメージ（Publicを想定）を格納します
 
+### 本ハンズオンを実施する上での注意
+本ハンズオンでは、同一のサブスクリプションで同時に複数の作業者が作業を実施することになります。
+途中、以下のような表記が入力項目の一部に入ることがあり、読み替えていただく必要がある箇所がございますので、ご注意ください。
+XXX はご自身のチームで決めた任意のID、その他 [] で囲まれた部分は該当するアカウントやシークレットの値を入力してください。
+例)
+myResourceGroup**XXX**
+**[YOUR-ACCOUNT-NAME]**/handson-gitops
+
 ---
 
 ## TASK1: Kubernetes および  GitOps の初歩を体感
