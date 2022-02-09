@@ -1,10 +1,11 @@
 # Handson TASK2
 ## TASK2: Git および、手動での GitOps を体感
-TASK1で利用した既存の GitOps ( ArgoCD )用 Github project を自チームの Github アカウントへインポートし、Git クライアント環境として Github Codespaces を利用して Git を体感します。
+TASK1で利用した既存の GitOps ( ArgoCD )用 Github project を自チームの Github アカウントへインポートし、Git クライアント環境として Github Codespaces または、cloudshell を利用して変更を行い Git を体感します。
 
 また、TASK1で作成したArgoCD Application のGitの設定をインポートした物へ変更し、手動でのGitOpsを体感します。
 
-<img width="955" alt="ScreenShot 2022-02-03 16 01 36" src="https://user-images.githubusercontent.com/17949085/152296167-b385a823-1339-4d05-8f0c-d43cefab5d5e.png">
+<img width="952" alt="ScreenShot 2022-02-09 9 16 18" src="https://user-images.githubusercontent.com/17949085/153098244-3e5e14b1-1437-4e04-8fb6-51a0ce4fdafa.png">
+
 
 ## TASK2.1: GitOps(ArgoCD)用 Github project を自分のGithubアカウントへインポート
 各チームで事前に準備した Github アカウントを使って、[Github へログイン](https://github.com/login)します。
