@@ -5,7 +5,7 @@ CI 用 Github project を自チームの Github アカウントへインポー�
 また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
-<img width="952" alt="ScreenShot 2022-02-07 15 48 45" src="https://user-images.githubusercontent.com/17949085/152738695-6e954e41-ae8e-406b-94f7-34321a0679db.png">
+<img width="952" alt="ScreenShot 2022-02-09 9 16 27" src="https://user-images.githubusercontent.com/17949085/153097731-f20e683e-792a-472d-b498-fb7f824b7c69.png">
 
 
 ## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成 および Access Token を発行
