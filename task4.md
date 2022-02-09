@@ -1,6 +1,6 @@
 # Handson TASK4
-## TASK4: Handson 終了後の後片付け、Azure リソースの削除
-Handson で利用した Azure リソースを削除します。
+## TASK4: Handson 終了後の後片付け、Azure リソース等の削除
+Handson で利用した Azure リソース等を削除します。
 
 ## TASK4.1: 各チームで TASK1 で作成した AKS 用のリソースグループを削除
 Azure ポータルより、TASK1 で作成したリソースグループ`myResourceGroupXXX`を表示します。
