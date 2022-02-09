@@ -10,9 +10,12 @@ CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジ�
 
 ## TASK3.1: CI 用 空のコンテナイメージを Dockerhub へ新規作成 および Access Token を発行
 Dockerhub へログイン後、画面上の`Create Repository` をクリックして作成画面へ移動します。
+
+
 <img width="1142" alt="ScreenShot 2022-02-07 13 00 26" src="https://user-images.githubusercontent.com/17949085/152723036-ba1d37db-6d0e-451b-a15e-5cb1f5f45358.png">
 
 <img width="1155" alt="ScreenShot 2022-02-07 13 00 42" src="https://user-images.githubusercontent.com/17949085/152723100-9338fb84-a56f-46cf-a1c9-e74d248eba1d.png">
+
 
 以下を入力し`Create`をクリックし、空のコンテナイメージを新規に作成します。
 + Repository名: handson-ci-image（コンテナイメージ名）
@@ -39,6 +42,7 @@ Dockerhub へログイン後、画面上の`Create Repository` をクリック�
 
 <img width="734" alt="ScreenShot 2022-02-07 18 14 37" src="https://user-images.githubusercontent.com/17949085/152759222-b66d226e-a09c-41a1-a2ff-976ec837313a.png">
 
+
 ## TASK3.2: CI（Github Actions）からのコードの変更を許可するために Personal access token を発行
 **TASK2.4.2で`Personal access token`を既に発行済みの場合は、この手順はスキップして、TASK3.3へ進んでください。**
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > 左メニューの`Personal access tokens` > 右上の`Generate new token`をクリックしてアクセストークン作成画面へ移動します。
@@ -51,6 +55,7 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 
 <img width="1097" alt="ScreenShot 2022-02-04 12 20 16" src="https://user-images.githubusercontent.com/17949085/152472894-ed4e5fc6-4fb4-4a39-892a-688469fcda17.png">
 
+
 以下を設定し、画面下部の 緑色の`Generate token`をクリックします。
 なお、作成したアクセストークンは、後ほど、Github Actions のSeceret 設定で使用するのでコピーして、控えておきます。（作成時しか確認出来ませんので、控え忘れた場合は、再作成となります。）
 
@@ -61,6 +66,7 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 <img width="1130" alt="ScreenShot 2022-02-04 12 22 35" src="https://user-images.githubusercontent.com/17949085/152473078-288a249b-f091-4f0e-9291-0c19514c23c5.png">
 
 <img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
+
 
 ## TASK3.3: CI用 Github project を自分のGithubアカウントへインポート
 Github 画面右上の`+`より`Import Repogitory`をクリックします。
@@ -96,6 +102,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 <img width="1132" alt="ScreenShot 2022-02-07 11 49 54" src="https://user-images.githubusercontent.com/17949085/152717952-1f10f618-0c68-44f2-9066-ab9071f2a545.png">
 
 <img width="1154" alt="ScreenShot 2022-02-07 12 03 48" src="https://user-images.githubusercontent.com/17949085/152718071-f21dd659-ed69-499f-a94a-9ee990bf7fc6.png">
+
 
 ## TASK3.5: Github Actions を有効にする
 続いて、Github Actions を有効にするために、再度、画面上右側の`Setting`をクリックします。
