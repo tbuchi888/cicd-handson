@@ -50,7 +50,7 @@ myResourceGroup**XXX**
 
 
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
-[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** より  az コマンドで Azure 上に、リソースグループと [AKS クラスタを作成](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-service-principal?tabs=azure-cli)します。
+[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **cloud shell** より  az コマンドで Azure 上に、リソースグループと [AKS クラスタを作成](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-service-principal?tabs=azure-cli)します。
 
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
 
@@ -59,8 +59,8 @@ myResourceGroup**XXX**
 + [SP_APPID]: 事前に作成されたサービス プリンシパルの`appId`
 + [SP_PWD]: 事前に作成されたサービス プリンシパルの`password`
 
-**Cloudshellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKS のクラスタ作成完了（ JSON 形式の結果が返ってくる）まで数分待ちます
-(Cloudshell を初めて使う場合には、ストレージの設定が必要です。)
+**cloud shellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKS のクラスタ作成完了（ JSON 形式の結果が返ってくる）まで数分待ちます
+(cloud shell を初めて使う場合には、ストレージの設定が必要です。)
 
 ```
 # 最初にリソースグループを作成します。
@@ -90,7 +90,7 @@ Azureポータル ＞ リソースグループ ＞ `myResourceGroupXXX`
 <img width="651" alt="ScreenShot 2022-02-03 12 13 14" src="https://user-images.githubusercontent.com/17949085/152275741-b91fa40a-a49b-4133-b5a0-bdd480c6a4cc.png">
 <img width="452<img width="573" alt="ScreenShot 2022-02-03 12 19 19" src="https://user-images.githubusercontent.com/17949085/152275911-720210d9-700a-4785-9c96-fb6e795f37e5.png">
 
-**Cloudshellのbashへ** 以下をコピー＆ペーストし、az コマンドにて AKS へ アクセスできるようにします。
+**cloud shellのbashへ** 以下をコピー＆ペーストし、az コマンドにて AKS へ アクセスできるようにします。
 ```
 # AKS接続情報を取得
 az aks get-credentials --resource-group myResourceGroupXXX --name myAKSCluster
@@ -103,7 +103,7 @@ kubectl get node -o wide
 
 ### TASK1.3: ArgoCD インストール
 [ArgoCD をインストールします。](https://argo-cd.readthedocs.io/en/stable/#quick-start)
-**Cloudshellのbashへ** 以下をコピー＆ペースト
+**cloud shellのbashへ** 以下をコピー＆ペースト
 
 ```
 kubectl create namespace argocd
@@ -169,7 +169,7 @@ DESTINATION
 インターネット（雲のアイコン）の右横に表示されているアプリケーションのPIPへブラウザよりアクセスし、デモアプリの画面が表示されることを確認します。
 
 このTASKの最後に、Azure PortalのCloud Shell より  AKS 上にアプリケーションの Kubernetes オブジェクト( Pod(コンテナ), Deployment（コンテナ管理）, Service（L4LB）)がデプロイされていることを確認します。
-**Cloudshellのbashへ** 以下をコピー＆ペースト
+**cloud shellのbashへ** 以下をコピー＆ペースト
 
 ```
 kubectl -n argotest get all

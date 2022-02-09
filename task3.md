@@ -68,7 +68,7 @@ Github 画面右上の`+`より`Import Repogitory`をクリックします。
 以下を入力して`Begin import`をクリックします。
 + Your old repository’s clone URL: https://github.com/tbuchi888/demo-js-nginx-docker-k8s.git
 + Repository Name: handson-ci-github-actions
-+ Privacy: Public（任意　Privateでも可）
++ Privacy: Public（任意 Privateでも可）
 
 `Importing complete! Your new repository [YOUR-ACCOUNT-NAME]/handson-ci-github-actions is ready.`と表示されるまでまって
 表示されている作成されたリポジトリへのリンクをクリックします。
@@ -98,35 +98,35 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 <img width="1154" alt="ScreenShot 2022-02-07 12 03 48" src="https://user-images.githubusercontent.com/17949085/152718071-f21dd659-ed69-499f-a94a-9ee990bf7fc6.png">
 
 ## TASK3.5: Github Actions を有効にする
-続いて、Github Actions　を有効にするために、再度、画面上右側の`Setting`をクリックします。
-左メニュー下`Security`の`Secrets`> `Actions` をクリックして Actions permissions　を変更します。
+続いて、Github Actions を有効にするために、再度、画面上右側の`Setting`をクリックします。
+左メニュー下`Security`の`Secrets`> `Actions` をクリックして Actions permissions を変更します。
 `Allow all actions`を選択して`Save`をクリックします。
 
 <img width="1169" alt="ScreenShot 2022-02-07 11 59 29" src="https://user-images.githubusercontent.com/17949085/152717717-adb510a8-275b-43a1-ad8b-bdcc7833b743.png">
 
-以上で　CI　( Github Actions　)の準備が整いました。
+以上で CI ( Github Actions )の準備が整いました。
 
 ## TASK3.6: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
-いよいよ、Web コンテンツの内容を変更し、Git コマンドで変更を反映させることで、　CI　( Github Actions　)を起動します。
+いよいよ、Web コンテンツの内容を変更し、Git コマンドで変更を反映させることで、 CI ( Github Actions )を起動します。
 CIの主な内容は以下の2つです。
 + Web コンテンツを含む、コンテナイメージをビルドして、Dockerhub へ push
 + GitOps（ ArgoCD ）用の Github プロジェクト（ Githubアカウント名/handson-gitops ）にある、Kubernetes マニフェストファイル（ k8s/bl.yml ）を新規にビルドしたコンテナイメージのタグ名に書き換える
-　　
-実際の CI ( Github Actions　)の内容については、handson-ci-github-actions　Github プロジェクトの`.github/workflows/main.yml`に記載されています。
-こちらの中で、先ほど設定した秘匿情報である　Secrets　の値を` ${{ secrets.DOCKER_USERNAME }}`のように記述して呼び出しを行い
+  
+実際の CI ( Github Actions )の内容については、handson-ci-github-actions Github プロジェクトの`.github/workflows/main.yml`に記載されています。
+こちらの中で、先ほど設定した秘匿情報である Secrets の値を` ${{ secrets.DOCKER_USERNAME }}`のように記述して呼び出しを行い
 秘匿情報をコードに直接記述することなく、ログについてもマスクする等、セキュアに処理を行なうことが可能です。
 
 
 それでは、はじめる前に、あらかじめ以下をブラウザで開いておきます。
-+ Githubアカウント名/handson-ci-github-actions　Github プロジェクト
++ Githubアカウント名/handson-ci-github-actions Github プロジェクト
 + Githubアカウント名/handson-gitops プロジェクト
 + Dockerhub( Login 済み handson-ci-image を表示)
 + ArgoCD( Login 済み Application のNW表示)
 
-`handson-ci-github-actions`Github プロジェクトを`Github Codespaces` で開く、または、Azure Portalの`Cloudshell`で`git clone`し、
+`handson-ci-github-actions`Github プロジェクトを`Github Codespaces` で開く、または、Azure Portalの`cloud shell`で`git clone`し、
 以下の部分を変更して、Gitコマンドで変更をリモートリポジトリ（`handson-ci-github-actions` Github プロジェクト）へ反映させます。
 
-+ 変更点1: `html/index.html` 14〜20行目の HTML　の Body 部分を変更します。（例： v1 から v2 ） 
++ 変更点1: `html/index.html` 14〜20行目の HTML の Body 部分を変更します。（例： v1 から v2 ） 
 
 ```
         <p>The HOSTNAME is $HOSTNAME </p>
@@ -157,9 +157,9 @@ git commit -a -m "Changed the contents of index.html and css.js."
 git push origin master
 ```
 
-　CI　( Github Actions　)が起動されますので、以下の状況を確認します。
-+ Githubアカウント名/handson-ci-github-actions　Github プロジェクト
-  + `Actions`タブより、 CI　( Github Actions　)の進捗状況を確認
+ CI ( Github Actions )が起動されますので、以下の状況を確認します。
++ Githubアカウント名/handson-ci-github-actions Github プロジェクト
+  + `Actions`タブより、 CI ( Github Actions )の進捗状況を確認
     + 正常に完了（グリーン）することを確認
 + Githubアカウント名/handson-gitops プロジェクト
   + `k8s/bl.yml`のコンテナイメージのタグが、自動的に更新されていることを確認

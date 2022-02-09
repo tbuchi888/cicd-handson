@@ -7,7 +7,7 @@ Azure ポータルより、TASK1 で作成したリソースグループ`myResou
 
 <img width="538" alt="ScreenShot 2022-02-07 11 04 25" src="https://user-images.githubusercontent.com/17949085/152713678-d279b3c2-f7ec-4f65-b25f-3e153519d07f.png">
 
-画面上段の`リソース　グループの削除`をクリックし、`リソース グループ名を入力してください:`へリソース グループ名`myResourceGroupXXX`を入力し、`削除`ボタンをクリックします。
+画面上段の`リソース グループの削除`をクリックし、`リソース グループ名を入力してください:`へリソース グループ名`myResourceGroupXXX`を入力し、`削除`ボタンをクリックします。
 
 <img width="775" alt="ScreenShot 2022-02-07 11 06 05" src="https://user-images.githubusercontent.com/17949085/152713929-b6030c87-0ec7-4682-90c9-bde2d63445ad.png">
 
@@ -16,7 +16,7 @@ Azure ポータルより、TASK1 で作成したリソースグループ`myResou
 
 
 ## TASK4.2: Github の Personal access token  を削除
-Github Actions　の Secret の設定で利用した Github の`Personal access token`を削除します。
+Github Actions の Secret の設定で利用した Github の`Personal access token`を削除します。
 
 Github へログイン後、右上の自チームのアイコン > `Settings` > 左メニュー下の`< > Developer settings` > `Personal access tokens` 画面へ移動し、作成した`Personal access token`の`Delete`をクリックし削除します。
 
@@ -33,14 +33,14 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 
 
 ## TASK4.3: Dockerhub Access Token を削除
-Github Actions　の Secret の設定で利用した Dockerhub の Access Token を削除します。
+Github Actions の Secret の設定で利用した Dockerhub の Access Token を削除します。
 Dockerhub へログイン後、画面右上のアカウント名をクリックし、`Account Settings` > `Security` > `Access Tokens`へ移動します。
 
 <img width="1142" alt="ScreenShot 2022-02-07 13 00 26" src="https://user-images.githubusercontent.com/17949085/152723036-ba1d37db-6d0e-451b-a15e-5cb1f5f45358.png">
 
 ![ScreenShot 2022-02-07 17 53 10](https://user-images.githubusercontent.com/17949085/152755873-be5a212f-990b-4754-b953-5bdb1a89f11f.png)
 
-作成した`Access Token`を選択（チェック）した状態で、`Delete`をクリックし、`Delete　Forvever`をクリックして削除します。
+作成した`Access Token`を選択（チェック）した状態で、`Delete`をクリックし、`Delete Forvever`をクリックして削除します。
 
 ![ScreenShot 2022-02-07 18 09 04](https://user-images.githubusercontent.com/17949085/152760898-1ae6922a-c48f-4963-8c0d-7e887c9637e2.png)
 

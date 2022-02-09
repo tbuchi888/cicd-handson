@@ -1,8 +1,8 @@
 # Handson TASK2
 ## TASK2: Git および、手動での GitOps を体感
-TASK1で利用した既存の GitOps ( ArgoCD )用 Github project を自チームの Github アカウントへインポートし、Git クライアント環境として Github Codespaces または、cloudshell を利用して変更を行い Git を体感します。
+TASK1で利用した既存の GitOps ( ArgoCD )用 Github project を自チームの Github アカウントへインポートし、Git クライアント環境として`Github Codespaces`または、`cloud shell`を利用して変更を行い Git を体感します。
 
-また、TASK1で作成したArgoCD Application のGitの設定をインポートした物へ変更し、手動でのGitOpsを体感します。
+また、TASK1で作成したArgoCD Application の Git の設定をインポートした物へ変更し、手動でのGitOpsを体感します。
 
 <img width="952" alt="ScreenShot 2022-02-09 9 16 18" src="https://user-images.githubusercontent.com/17949085/153098244-3e5e14b1-1437-4e04-8fb6-51a0ce4fdafa.png">
 
@@ -46,7 +46,7 @@ ArgoCD 画面右上の `APP DETAILS` > `EDIT` で編集モードに入り、`REP
 <img width="294" alt="ScreenShot 2022-02-03 17 04 55" src="https://user-images.githubusercontent.com/17949085/152303963-dae81937-c4f6-40ad-af64-0f443747c83f.png">
 
 ## TASK2.4: Git リポジトリを編集し、Git および手動での GitOps を体感 その1
-GitOps 用 の Git　プロジェクトについて、変更を行います。
+GitOps 用 の Git プロジェクトについて、変更を行います。
 + `Github Codespaces`を利用可能な場合は、[TASK2.4.1](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task241-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)を実施してください。
 + `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
 
@@ -108,7 +108,7 @@ Github へログイン後、右上の自チームのアイコン > `Settings` > 
 <img width="813" alt="ScreenShot 2022-02-07 12 13 21" src="https://user-images.githubusercontent.com/17949085/152718824-6b70373a-25a1-48b7-9474-0dac2a2681c2.png">
 
 
-次に、[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **Cloudshell** を起動し、`git clone`コマンドで ソースコードをローカルにクローンします。
+次に、[Azure ポータル](https://ms.portal.azure.com/)へログインし、 **cloud shell** を起動し、`git clone`コマンドで ソースコードをローカルにクローンします。
 
 以下[YOUR-ACCOUNT-NAME]は各自で置き換えてくささい
 
@@ -177,7 +177,7 @@ ArgoCD 側で 参照している Git 上の変更を検知して、自動的に 
 
 
 ## TASK2.6: 手動での GitOps を体感 その2（共通）
-再度、`Codospaces` または、`Cloudshell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
+再度、`Codospaces` または、`Cloud shell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映
 
 + TASK2.2を参考にチャンレジしてください 
 + YAML形式なので、インデントに注意して作業してください
@@ -204,7 +204,7 @@ ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウ
 確認ができたら先に進みます。
 
 
-つづいて、再度、`Codospaces` または、`Cloudshell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映します。
+つづいて、再度、`Codospaces` または、`cloud shell`へ戻り、`bl.yml`を以下の通り、変更し、リモートリポジトリへ変更反映します。
 
 + TASK2.4を参考にチャンレジしてください 
 + YAML形式なので、インデントに注意して作業してください
