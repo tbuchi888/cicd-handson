@@ -3,7 +3,9 @@
 + 記載の内容については、2022年2月4日時点の環境（ OSS や、その他 Azure 等プラットフォームのバージョン）をベースとしています。
 + **なお、こちらに記載の内容はあくまでサンプルとなりますので、ご注意ください。**
 
-![ScreenShot 2022-02-03 12 38 43](https://user-images.githubusercontent.com/17949085/152277472-e69f6882-c0a2-4b7f-9407-563a4e8b7b45.png)
+<img width="952" alt="ScreenShot 2022-02-09 9 15 53" src="https://user-images.githubusercontent.com/17949085/153098617-694bd597-408d-4934-bb86-a8ccbc7b8751.png">
+
+
 
 ## アジェンダ
 + [TASK0: 事前準備](https://github.com/tbuchi888/cicd-handson/blob/main/README.md#task0-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99)
@@ -14,7 +16,7 @@
 
 ## TASK0: 事前準備
 本 Handson では、開始前に以下の準備ができていることを前提としています。
-参加チーム毎に以下の事前準備をお願いします
+参加チーム毎に事前準備をお願いします
 
 + Hands on 用 Azure Subscription 準備
   + 用途： アプリデプロイ用のAKS(Azure Kubernetes Service)及び、AKS上でGitOpsのOSSツール（ArgoCD）を動作させます
@@ -43,7 +45,8 @@ myResourceGroup**XXX**
 *1: GitOps ツールについては、他に [Flux](https://fluxcd.io/) 等もありますが、今回は ArgoCD を利用します。
 
 
-<img width="952" alt="ScreenShot 2022-02-03 12 47 50" src="https://user-images.githubusercontent.com/17949085/152278272-379adebe-6cca-4b5e-b356-c8263f3afa88.png">
+<img width="952" alt="ScreenShot 2022-02-09 9 16 03" src="https://user-images.githubusercontent.com/17949085/153098658-6412a270-e2b2-4617-bf88-3e8504f50bfe.png">
+
 
 
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
