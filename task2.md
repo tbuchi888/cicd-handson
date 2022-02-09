@@ -45,7 +45,7 @@ ArgoCD 画面右上の `APP DETAILS` > `EDIT` で編集モードに入り、`REP
 <img width="929" alt="ScreenShot 2022-02-03 17 03 12" src="https://user-images.githubusercontent.com/17949085/152303748-d92eeb25-790b-47ae-9b0d-6b3fd84a1a03.png">
 <img width="294" alt="ScreenShot 2022-02-03 17 04 55" src="https://user-images.githubusercontent.com/17949085/152303963-dae81937-c4f6-40ad-af64-0f443747c83f.png">
 
-## TASK2.4: Git リポジトリを編集し、Git および手動での GitOps を体感 その1
+## TASK2.3: Git リポジトリを編集し、Git および手動での GitOps を体感 その1
 GitOps 用 の Git プロジェクトについて、変更を行います。
 + `Github Codespaces`を利用可能な場合は、[TASK2.4.1](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task241-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)を実施してください。
 + `Github Codespaces`を利用出来ない場合は、[TASK2.4.2](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md#task242-cloud-shell-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88-github-codespaces-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88)を実施してください。
