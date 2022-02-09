@@ -6,8 +6,8 @@
 ![ScreenShot 2022-02-03 12 38 43](https://user-images.githubusercontent.com/17949085/152277472-e69f6882-c0a2-4b7f-9407-563a4e8b7b45.png)
 
 ## アジェンダ
-+ [TASK0: 事前準備](https://github.com/tbuchi888/cicd-handson/edit/main/README.md#task0-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99)
-+ [TASK1: Kubernetes および GitOps の初歩を体感](https://github.com/tbuchi888/cicd-handson/edit/main/README.md#task1-kubernetes-%E3%81%8A%E3%82%88%E3%81%B3--gitops-%E3%81%AE%E5%88%9D%E6%AD%A9%E3%82%92%E4%BD%93%E6%84%9F)
++ [TASK0: 事前準備](https://github.com/tbuchi888/cicd-handson/blob/main/README.md#task0-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99)
++ [TASK1: Kubernetes および GitOps の初歩を体感](https://github.com/tbuchi888/cicd-handson/blob/main/README.md#task1-kubernetes-%E3%81%8A%E3%82%88%E3%81%B3--gitops-%E3%81%AE%E5%88%9D%E6%AD%A9%E3%82%92%E4%BD%93%E6%84%9F)
 + [TASK2: Git および、手動での GitOps を体感](https://github.com/tbuchi888/cicd-handson/blob/main/task2.md)
 + [TASK3: CI（Github Actions）および、CIと連動した CD（GitOps）を体感](https://github.com/tbuchi888/cicd-handson/blob/main/task3.md)
 + [TASK4: 後片付け、Azureリソースの削除](https://github.com/tbuchi888/cicd-handson/blob/main/task4.md)
