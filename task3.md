@@ -2,7 +2,7 @@
 ## TASK3: CI（Github Actions）および、CIと連動した CD（GitOps）を体感
 CI 用 空のコンテナイメージを Dockerhub へPublicとして新規作成します。 
 CI 用 Github project を自チームの Github アカウントへインポートし、 Github Actions の Secret 設定を行い CI の設定を完了させます。
-また、Github Codespaces にてコンテンツを変更の上、Git commit / push をトリガーとして、
+また、`Github Codespaces`や`cloud shell`にてコンテンツを変更の上、Git commit / push をトリガーとして、
 CI( Github Actions )によるコンテナビルド及び、GitOps 用プロジェクトの Kubernetes マニフェストを自動更新による、GitOps を体感します。
 
 <img width="952" alt="ScreenShot 2022-02-09 9 16 27" src="https://user-images.githubusercontent.com/17949085/153097731-f20e683e-792a-472d-b498-fb7f824b7c69.png">
@@ -14,7 +14,7 @@ Dockerhub へログイン後、画面上の`Create Repository` をクリック�
 
 <img width="1155" alt="ScreenShot 2022-02-07 13 00 42" src="https://user-images.githubusercontent.com/17949085/152723100-9338fb84-a56f-46cf-a1c9-e74d248eba1d.png">
 
-以下を入力し`Cretate`をクリックし、空のコンテナイメージを新規に作成します。
+以下を入力し`Create`をクリックし、空のコンテナイメージを新規に作成します。
 + Repository名: handson-ci-image（コンテナイメージ名）
 + Visibility: Public
 
@@ -106,7 +106,7 @@ Secret を設定するめに、TASK3.2 でインポートした Github へ移動
 
 以上で CI ( Github Actions )の準備が整いました。
 
-## TASK3.6: Github Codespaces 上でコンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
+## TASK3.6: コンテンツの内容を変更後、Git Commit/Push により、CI をトリガーし、GitOps との連携も体感
 いよいよ、Web コンテンツの内容を変更し、Git コマンドで変更を反映させることで、 CI ( Github Actions )を起動します。
 CIの主な内容は以下の2つです。
 + Web コンテンツを含む、コンテナイメージをビルドして、Dockerhub へ push
@@ -123,7 +123,11 @@ CIの主な内容は以下の2つです。
 + Dockerhub( Login 済み handson-ci-image を表示)
 + ArgoCD( Login 済み Application のNW表示)
 
-`handson-ci-github-actions`Github プロジェクトを`Github Codespaces` で開く、または、Azure Portalの`cloud shell`で`git clone`し、
+`handson-ci-github-actions`Github プロジェクトを
++ `Github Codespaces` で開く、
+または、
++ Azure Portalの`cloud shell`で`git clone`し、
+
 以下の部分を変更して、Gitコマンドで変更をリモートリポジトリ（`handson-ci-github-actions` Github プロジェクト）へ反映させます。
 
 + 変更点1: `html/index.html` 14〜20行目の HTML の Body 部分を変更します。（例： v1 から v2 ） 
