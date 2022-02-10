@@ -55,12 +55,22 @@ myResourceGroup**XXX**
 <img width="1115" alt="ScreenShot 2022-02-03 11 55 21" src="https://user-images.githubusercontent.com/17949085/152273919-6f441588-a674-41e7-a5b7-eb9643c0246b.png">
 
 **以下各チーム毎に準備されたものへ置き換えて実行をしてください**
-+ myResourceGroupXXX: Subscription内でユニークなものを設定
-+ [SP_APPID]: 事前に作成されたサービス プリンシパルの`appId`
-+ [SP_PWD]: 事前に作成されたサービス プリンシパルの`password`
++ myResourceGroupXXX: Subscription 内でユニークなものを設定
++ [my-subscription-name]: 今回作成する Subscription 名
 
 **cloud shellのbashへ** 以下をコピー＆ペーストし、上記について各チーム毎に準備されたものへ置き換えてEnterを押下、AKS のクラスタ作成完了（ JSON 形式の結果が返ってくる）まで数分待ちます
 (cloud shell を初めて使う場合には、ストレージの設定が必要です。)
+
+デフォルトのサブスクリプションの確認し、異なる場合は利用するサブスクリプションを設定をします。
+
+```
+# デフォルトのサブスクリプションを確認します。
+az account list --output table
+# デフォルトのサブスクリプションが、作成したいサブスクリプションと異なっている場合
+az account set --subscription '[my-subscription-name]'
+```
+
+続いて、
 
 ```
 # 最初にリソースグループを作成します。
