@@ -199,7 +199,8 @@ git push origin master
 
 ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウザ より アプリケーション（コンテナイメージ）が変更されたことを確認してください。
 ブラウザのキャッシュが残っていて、変更が反映されない場合は、シークレットウィンドウで再度開いてください。
-![image](https://user-images.githubusercontent.com/15963767/152686512-223ed47f-86ed-433d-8a82-5614f4e2d1f8.png)
+
+![image](https://user-images.githubusercontent.com/15963767/152686678-925933aa-a404-4467-a0c5-6c07e4d09d4f.png)
 
 確認ができたら先に進みます。
 
@@ -225,9 +226,6 @@ git push origin master
 
 再度、ArgoCD  に戻り、上記変更が反映されることを確認し、ブラウザ より アプリケーション（コンテナイメージ）が変更されたことを確認してください。
 ブラウザのキャッシュが残っていて、変更が反映されない場合は、シークレットウィンドウで再度開いてください。
-
-![image](https://user-images.githubusercontent.com/15963767/152686678-925933aa-a404-4467-a0c5-6c07e4d09d4f.png)
-
 
 以上でこのタスクは終了となります。
 [TASK3へ](https://github.com/tbuchi888/cicd-handson/blob/main/task3.md)
