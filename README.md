@@ -28,6 +28,9 @@
   + アカウントが存在しない場合： [Dockerhub Top ページの Get Started Today for Free](https://hub.docker.com/) より新規作成
   + 用途：CIで作成するコンテナイメージ（Publicを想定）を格納します
 
+<img width="952" alt="ScreenShot 2022-02-09 9 16 03" src="https://user-images.githubusercontent.com/17949085/153098658-6412a270-e2b2-4617-bf88-3e8504f50bfe.png">
+
+
 ### 本ハンズオンを実施する上での注意
 本ハンズオンでは、同一のサブスクリプションで同時に複数の作業者が作業を実施することになります。
 途中、以下のような表記が入力項目の一部に入ることがあり、読み替えていただく必要がある箇所がございますので、ご注意ください。
@@ -44,9 +47,7 @@ myResourceGroup**XXX**
 
 *1: GitOps ツールについては、他に [Flux](https://fluxcd.io/) 等もありますが、今回は ArgoCD を利用します。
 
-
-<img width="952" alt="ScreenShot 2022-02-09 9 16 03" src="https://user-images.githubusercontent.com/17949085/153098658-6412a270-e2b2-4617-bf88-3e8504f50bfe.png">
-
+<img width="952" alt="ScreenShot 2022-02-09 9 16 09" src="https://user-images.githubusercontent.com/17949085/153380083-dab68f31-bfce-49fe-a645-7ac51e497e37.png">
 
 
 ## TASK1.1: AKS(Azure Kubernetes Service)のクラスターを作成
