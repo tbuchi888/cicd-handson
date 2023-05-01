@@ -87,7 +87,7 @@ az aks create \
   --enable-cluster-autoscaler \
   --min-count 1 \
   --max-count 3 \
-  --generate-ssh-keys \
+  --generate-ssh-keys
 ```
 <img width="909" alt="ScreenShot 2022-02-03 12 03 42" src="https://user-images.githubusercontent.com/17949085/152274651-f587da0d-6e44-4598-b796-febd306d8595.png">
 
